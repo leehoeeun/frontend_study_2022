@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .grandparent{
+      width: 800px;
+      height: 550px;
+      background-color: gray;
+      position: relative;
+
+    }
+    .parent{
+      width: 600px;
+      height: 350px;
+      background-color: royalblue;
+      padding: 20px;
+
+      /* position: relative; */
+    }
+    .child1{
+      width: 250px;
+      height: 150px;
+      background-color: orange;
+    }
+    .child2{
+      width: 350px;
+      height: 250px;
+      background-color: green;
+      opacity: 0.7;
+
+      /* 상위 요소 중 위치 기준이 존재하는 가장 가까운 요소를 기준으로 배치한다 */
+      /* absolute를 쓰면, 일반 배치 흐름에서 벗어남(제외) */
+      position: absolute;
+      
+      /* 상위 요소 중 position으로 지정한 태그가 없으면, 최상위 루트(html)까지 타고 올라감=>뷰포트 기준 */
+      /* top:0px;
+      left: 0px; */
+
+      top: 50px;
+      right: 50px;
+
+      /* 보통은 absolute사용 시 부모 요소에 relative 지정 */
+    }
+    .child3{
+      width: 150px;
+      height: 400px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="grandparent">
+    <div class="parent">
+      <div class="child1"></div>
+      <div class="child2"></div>
+      <div class="child3"></div>
+    </div>
+  </div>
+  
+</body>
+</html>

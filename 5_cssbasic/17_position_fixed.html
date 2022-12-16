@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      height: 2000px;
+    }
+    .grandparent{
+      width: 800px;
+      height: 550px;
+      background-color: gray;
+      position: relative;
+
+    }
+    .parent{
+      width: 600px;
+      height: 350px;
+      background-color: royalblue;
+      padding: 20px;
+      position: relative;
+    }
+    .child1{
+      width: 250px;
+      height: 150px;
+      background-color: orange;
+    }
+    .child2{
+      width: 350px;
+      height: 250px;
+      background-color: green;
+      opacity: 0.7;
+      
+      /* 뷰포트를 기준으로 배치(화면을 스크롤 해도 요소의 위치가 고정) */
+      /* fied를 쓰면, 일반 배치 흐름에서 벗어남(제외) */
+      position: fixed;
+      top: 30px;
+      right: 30px;
+
+      /* fixed 주로 쓰는 곳 : 광고 배너, 최상단으로 이동하는 버튼 만들 때, 유튜브 영상 최소화, 모바일 메뉴 */
+      
+    }
+    .child3{
+      width: 150px;
+      height: 400px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="grandparent">
+    <div class="parent">
+      <div class="child1"></div>
+      <div class="child2"></div>
+      <div class="child3"></div>
+    </div>
+  </div>
+  
+</body>
+</html>

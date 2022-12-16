@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      height: 2000px;
+    }
+    .grandparent{
+      width: 800px;
+      height: 550px;
+      background-color: gray;
+      position: relative;
+
+    }
+    .parent{
+      width: 600px;
+      height: 350px;
+      background-color: royalblue;
+      padding: 20px;
+      position: relative;
+      opacity: 0.8;
+      z-index: 9999;
+      /* z-index는 형제 사이에서 비교 가능 */
+    }
+    .child1{
+      width: 250px;
+      height: 150px;
+      background-color: orange;
+      position: relative;
+      z-index: 999;
+      opacity: 0.7;
+    }
+    .child2{
+      width: 350px;
+      height: 250px;
+      background-color: green;
+      opacity: 0.7;
+      position: fixed;
+      top: 100px;
+      left: 100px;
+      z-index: 1;
+    }
+    .child3{
+      width: 150px;
+      height: 400px;
+      background-color: red;
+      position: absolute;
+      top: 300px;
+      opacity: 0.7;
+      z-index: 2;
+    }
+
+    /* z-index : 요소의 쌓임 순서 지정, 숫자가 높을 수록 위에 쌓임 */
+    /* position 속성의 값(static 제외)이 있거나 Flex Item에서  */
+
+
+  </style>
+</head>
+<body>
+  <div class="grandparent">
+    <div class="parent">
+      <div class="child1"></div>
+      <div class="child2"></div>
+      <div class="child3"></div>
+    </div>
+  </div>
+  
+</body>
+</html>

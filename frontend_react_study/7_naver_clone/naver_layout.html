@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>네이버 : 회원가입</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    body {
+      font-family: Dotum, 돋움, Helvetica, sans-serif;
+      background-color: #f5f6f7;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    #header {
+      background-color: orange;
+    }
+
+    .top {
+      max-width: 768px;
+      height: 124px;
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #container {
+      max-width: 768px;
+      height: 996px;
+      background-color: cornflowerblue;
+      margin: 0 auto;
+    }
+
+    .section-input {
+      width: 460px;
+      margin: 0 auto;
+    }
+
+    #footer {
+      background-color: cadetblue;
+    }
+
+    .bottom {
+      max-width: 768px;
+      height: 83px;
+      margin: 0 auto;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- 헤더 영역 -->
+  <div id="header">
+    <div class="top">
+      <h1>
+        <a href="#">
+          로고자리
+        </a>
+      </h1>
+    </div>
+  </div>
+  
+  <!-- 메인(컨테이너) 영역 -->
+  <div id="container">
+    <div class="section-input">
+      이름
+      <input type="text">
+    </div>
+  </div>
+
+  <!-- 푸터 영역 -->
+  <div id="footer">
+    <div class="bottom">
+      <div class="bt-menu">
+        하단 메뉴 영역
+      </div>
+      <div class="copyright">
+        카피라이트 영역
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+html{
+  font-size: 10px;
+  color: #333;
+}
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #333;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+img {
+  display: block;
+}
+
+.btn{
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s, color 0.4s;
+  display: block;
+}
+.btn:hover{
+  color: #fff;
+  background-color: #333;
+}
+
+/* header */
+header{
+  background-color: orange;
+}
+header .inner{
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .inner .gnb{
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  background-color: #000;
+  overflow: hidden;
+  padding: 0px 8px;
+}
+header .inner .gnb .gnb__wrap{
+  display: flex;
+
+}
+header .inner .gnb .gnb__wrap .gnb__inner{
+  padding: 20px;
+}
+header .inner .gnb .gnb__wrap .gnb__inner .gnb__1depth{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+/* 임시 */
+.gnb__2depth{
+  /* display: none; */
+}
+
+
+
+
+
+header .inner .gnb .lang{
+  display: flex;
+  padding: 20px;
+}
+
+header .inner .gnb .lang a{
+  color: #fff;
+  padding: 20px 10px;
+}
+header .inner .gnb .lang li:nth-child(2){
+  padding-left: 5px;
+  position: relative;
+}
+header .inner .gnb .lang li:nth-child(2)::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 3px;
+  margin: auto;
+  width: 1px;
+  height: 12px;
+  background-color: #fff;
+}
+

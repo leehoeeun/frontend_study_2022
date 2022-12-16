@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>네이버 회원가입</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="">
+  <style>
+/* -----------------------공통 css----------------------- */
+*{
+      box-sizing: border-box;
+      outline: none;
+    }
+    body{
+      font-family: Dotum, 돋움, Helvetica, sans-serif;
+      background-color: #f5f6f7;
+    }
+    a{
+      text-decoration: none;
+      color: #000000;
+    }
+    
+/* -----------------------header css----------------------- */
+
+
+    .top{
+      max-width: 768px;
+      height: 124px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+
+    }
+    .top>h1>a>img{
+      width: 240px;
+    }
+/* -----------------------container css----------------------- */
+    #container {
+      max-width: 768px;
+      height: 996px;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      padding: 0px 20px;
+    }
+    .con-wraps{
+      width: 460px;
+      margin: 0 auto;
+    }
+    .wrap{
+      box-sizing: border-box;
+     
+    }  
+    .wrap + .wrap{
+      margin-top: 20px;
+    }
+    h3{
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 19px;
+      margin-bottom: 8px;
+    }
+    input{
+    width: 100%;
+    height: 51px;
+    border: solid 1px #dadada;
+    }
+    select{
+      width: 100%;
+      height: 51px;
+      border: solid 1px #dadada;
+    }
+    button{
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      background-color: #03c75a;
+    }
+    .birth-wrap{
+      display: flex;
+    }
+    .birth-wrap *{
+      flex-grow: 1;
+    }
+    #birth-mm{
+      margin-left: 8px;
+
+    }
+    #birth-dd{
+      margin-left: 8px;
+    }
+    .email>h3>span{
+      color: #8e8e8e;
+      font-size: 12px;
+      font-weight: 400;
+    }
+  .num-wrap{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 8px 0px;
+  }
+  #number{
+    flex-grow: 1;
+    width: auto;
+  }
+  .btn-number{
+    margin-left: 8px;
+  }
+  .btn-join{
+    margin-top: 20px;
+    width: 100%;
+    height: 51px;
+
+  }
+
+/* -----------------------footer css----------------------- */
+    .bottom{
+      max-width:768px;
+      height: 83px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    /* .btn-menu:nth-child(n+1){
+      display: inline;
+      color: #7e7e7e;
+      font-size: 12px;
+      font-style: normal;
+      margin-left: 4px;
+    } */
+    .btn-menu>a{
+      position: relative;
+      color: #7e7e7e;
+      font-size: 12px;
+      font-style: normal;
+      padding: 0px 8px;
+    }
+
+    .btn-menu *:nth-child(n)::after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0px;
+      width: 1px;
+      height: 10px;
+      background-color: #7e7e7e;
+    }
+    .btn-menu *:nth-child(1)::after{
+      display: none;
+    }
+    .btn-menu>a:hover{
+      color: #03c75a;
+      text-decoration:underline;
+    }
+    .copyright{
+      color: #7e7e7e;
+      font-size: 12px;
+      font-style: normal;
+      margin-top: 8px;
+    }
+
+
+    input:focus::placeholder{
+      color: transparent;
+      justify-content: ;
+      align-content: ;
+      align-items: ;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- 헤더 영역 -->
+  <header id="header">
+    <div class="top">
+      <h1 class="logo">
+        <a href="https://www.naver.com/">
+          <img src="https://ssl.pstatic.net/static/nid/join/m_logo_naver.png" alt="logo">
+        </a>
+      </h1>
+    </div>
+  </header>
+
+
+  <!-- 메인(컨테이너) 영역 -->
+  <section id="container">
+    <div class="con-wraps">
+    
+      <div id="con-wrap1" class="wrap">
+        <!-- 아이디 -->
+        <div class="identity">
+          <h3><label for="identity">아이디</label></h3>
+          <input type="text" id="identity" name="identity">
+        </div>
+
+        <!-- 비밀번호 -->
+        <div class="password">
+          <h3><label for="identity">비밀번호</label></h3>
+          <input type="password" id="password" name="password">
+        </div>
+
+        <!-- 비밀번호 확인 -->
+        <div class="re-password">
+          <h3><label for="identity">비밀번호</label></h3>
+          <input type="password" id="re-password" name="re-password">
+        </div>
+      </div>
+
+      <div id="con-wrap2" class="wrap">
+        <!-- 이름 -->
+        <div class="name">
+          <h3><label for="name">이름</label></h3>
+          <input type="text" id="name" name="name">
+        </div>
+
+        <!-- 생년월일 -->
+        <div class="birthday">
+          <h3><label for="birth-yy">생년월일</label></h3>
+          <div class="birth-wrap">
+            <input type="text" id="birth-yy" name="birth-yy" placeholder="년(4자)">
+            <select name="birth-mm" id="birth-mm">
+              <option value="0">월</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <input type="text" id="birth-dd" name="birth-dd" placeholder="일">
+          </div>
+        </div>
+
+        <!-- 성별-->
+        <div class="gender">
+          <h3><label for="gender">성별</label></h3>
+          <select name="gender" id="gender">
+            <option value="non-male">성별</option>
+            <option value="male">남성</option>
+            <option value="female">여성</option>
+          </select>
+        </div>
+
+        <!-- 이메일 -->
+        <div class="email">
+          <h3>
+            <label for="email">본인 확인 이메일</label>
+            <span>(선택)</span>
+          </h3>
+          <input type="text" id="email" name="email" placeholder="선택입력">
+        </div>
+      </div>
+
+      <div id="con-wrap3" class="wrap">
+        <div class="number">
+          <h3><label for="number">휴대전화</label></h3>
+          <select name="num-national" id="num-national">
+            <option value="ko">대한민국 +82</option>
+          </select>
+          <div class="num-wrap">
+            <input type="number" id="number" name="number" placeholder="전화번호 입력">
+            <button class="btn btn-number">인증번호 받기</button>
+          </div>
+          <input type="text" id="number-check" name="number-check" placeholder="인증번호 입력하세요." disabled> 
+        </div>
+      </div>
+      
+
+      <div class="join-wrap">
+        <button class="btn btn-join">가입하기</button>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- 푸터 영역 -->
+  <footer id="footer">
+    <div class="bottom">
+      <div class="btn-menu">
+        <a href="#">이용약관</a>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">책임의 한계와 법적고지</a>
+        <a href="#">회원정보 고객센터</a>
+      </div>
+      <div class="copyright">ⓒNAVER Corp.</div>
+    </div>
+  </footer>
+
+
+
+</body>
+</html>

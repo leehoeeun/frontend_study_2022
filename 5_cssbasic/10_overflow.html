@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .parent{
+      width: 200px;
+      height: 150px;
+      background-color: royalblue;
+      margin: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+      
+      /* overflow: hidden; 넘친 영역을 숨김*/
+      /* overflow: scroll; */
+      /* overflow: auto; - 넘쳤을 때만 스크롤 생성됨 */
+      /* overflow: hidden scroll; - x축은 숨기고, y축은 무조건 스크롤 바 생성 */
+
+
+    }
+    .child{
+      width: 300px;
+      height: 100px;
+      background-color: orange;
+      
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <div class="parent">
+    <div class="child"></div>
+  </div>
+</body>
+</html>

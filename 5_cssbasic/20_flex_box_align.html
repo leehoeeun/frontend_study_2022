@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .flex-container{
+      display: flex;
+      background-color: royalblue;
+    }
+    .flex-items{
+      width: 100PX;
+      height: 100px;
+      line-height: 100px;
+      margin: 10px;
+      text-align: center;
+      font-size: 30px;
+      background-color: #c1c1c1;
+    }
+    .flex-items2{
+      width: 100PX;
+      /* height: 100px; */
+      /* line-height: 100px; */
+      margin: 10px;
+      text-align: center;
+      font-size: 30px;
+      background-color: #c1c1c1;
+    }
+
+    .flex-nowrap {
+      flex-wrap: nowrap;
+    }
+    .flex-wrap {
+      flex-wrap: wrap;
+    }
+    .flex-wrap-reveres{
+      flex-wrap: wrap-reverse;
+    }
+
+    .justify-content-start {
+      justify-content: flex-start;
+    }
+    .justify-content-end {
+      justify-content: flex-end;
+    }
+    .justify-content-center {
+      justify-content: center;
+    }
+    .justify-content-between {
+      justify-content: space-between;
+    }
+    .justify-content-around {
+      justify-content: space-around;
+    }
+    .justify-content-evenly {
+      justify-content: space-evenly;
+    }
+
+    .h-600px {
+      height: 400px;
+    }
+    /* .h-auto {
+      height: auto !important;
+    } */
+    .align-content-start {
+      align-content: flex-start;
+    }
+    .align-content-center {
+      align-content: center;
+    }
+    .align-content-end {
+      align-content: flex-end;
+    }
+
+    .align-items-start {
+      align-items: flex-start;
+    }
+    .align-items-center {
+      align-items: center;
+    }
+    .align-items-end {
+      align-items: flex-end;
+    }
+  </style>
+</head>
+<body>
+  <h1>flex-wrap : Flex Item의 줄바꿈 여부 지정</h1>
+  <h2>nowrap: 기본값, 줄바꿈 없음</h2>
+  <div class="flex-container flex-nowrap">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+    <div class="flex-items">4</div>
+    <div class="flex-items">5</div>
+    <div class="flex-items">6</div>
+  </div>
+  <p>브라우저 창 크기를 조절해 보세요.</p>
+
+
+  <h2>wrap: 자동 줄바꿈 시도</h2>
+  <div class="flex-container flex-wrap">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+    <div class="flex-items">4</div>
+    <div class="flex-items">5</div>
+    <div class="flex-items">6</div>
+  </div>
+
+  <h2>wrap-reverse: wrap과 반대로 아래에서 부터 자동 줄바꿈 시도</h2>
+  <div class="flex-container flex-wrap-reveres">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+    <div class="flex-items">4</div>
+    <div class="flex-items">5</div>
+    <div class="flex-items">6</div>
+  </div>
+
+  <p>브라우저 창 크기를 조절해 보세요.</p>
+<br>
+<hr>
+<br>
+  <h1>justify-content : 주축의 정렬 방법</h1>
+  <h2>flex-start: 기본값, 위에서 아래로, 왼쪽에서 오른쪽으로 정방향</h2>
+  <div class="flex-container justify-content-start">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+  </div>
+  
+  <h2>flex-end: 아래에서 위로, 오른쪽에서 왼쪽으로 정방향</h2>
+  <div class="flex-container justify-content-end">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+  </div>
+  
+  <h2>flex-center: 가운데로 정렬 </h2>
+  <div class="flex-container justify-content-center">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+  </div>
+
+  <h2>space-between : 요소들 사이에 동일한 간격 유지</h2>
+  <div class="flex-container justify-content-between">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+  </div>
+
+  <h2>space-around : 요소들 주위에 동일한 간격 유지</h2>
+  <div class="flex-container justify-content-around">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+  </div>
+
+  <h2>space-evenly : 요소들 사이와 주위에 동일한 간격 유지</h2>
+  <div class="flex-container justify-content-evenly">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+  </div>
+
+  <br><hr><br>
+
+  <h1>align-content: 교차축(y축)의 여러 줄 정렬 방법</h1>
+  <p>2줄 이상일 때만 적용되는 속성으로 flex-wrap:wrap; 을 같이 사용해야 적용된다!</p>
+  
+  <h2>flex-start</h2>
+  <div class="flex-container flex-wrap h-600px align-content-start">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+    <div class="flex-items">4</div>
+    <div class="flex-items">5</div>
+    <div class="flex-items">6</div>
+  </div>
+
+  <h2>flex-end</h2>
+  <div class="flex-container flex-wrap h-600px align-content-end">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+    <div class="flex-items">4</div>
+    <div class="flex-items">5</div>
+    <div class="flex-items">6</div>
+  </div>
+
+  <h2>flex-center</h2>
+  <div class="flex-container flex-wrap h-600px align-content-center">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+    <div class="flex-items">4</div>
+    <div class="flex-items">5</div>
+    <div class="flex-items">6</div>
+  </div>
+
+  <h2>flex-content 안쓴 경우</h2>
+  <div class="flex-container flex-wrap h-600px ">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+    <div class="flex-items">4</div>
+    <div class="flex-items">5</div>
+    <div class="flex-items">6</div>
+  </div>
+
+  <br><hr><br>
+
+  <h1>align-items: 교차축(y축)의 여러 줄 정렬 방법</h1>
+  <p>한 줄만 있어도 동작하기에 수직 정렬에 자주 이용</p>
+  
+  <h2>stretch: 기본값</h2>
+  <div class="flex-container flex-wrap h-600px align-items-">
+    <div class="flex-items2">1</div>
+    <div class="flex-items2">2</div>
+    <div class="flex-items2">3</div>
+    <div class="flex-items2">4</div>
+    <div class="flex-items2">5</div>
+    <div class="flex-items2">6</div>
+  </div>
+
+  <h2>flex-start</h2>
+  <div class="flex-container flex-wrap h-600px align-items-start">
+    <div class="flex-items2">1</div>
+    <div class="flex-items2">2</div>
+    <div class="flex-items2">3</div>
+    <div class="flex-items2">4</div>
+    <div class="flex-items2">5</div>
+    <div class="flex-items2">6</div>
+  </div>
+
+  <h2>flex-end</h2>
+  <div class="flex-container flex-wrap h-600px align-items-end">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+    <div class="flex-items">4</div>
+    <div class="flex-items">5</div>
+    <div class="flex-items">6</div>
+  </div>
+
+  <h2>flex-center</h2>
+  <div class="flex-container flex-wrap h-600px align-items-center">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+    <div class="flex-items">4</div>
+    <div class="flex-items">5</div>
+    <div class="flex-items">6</div>
+  </div>
+
+  <p>한 줄만 있어도 동작하기에 수직 정렬에 자주 이용</p>
+  <h2>flex-start</h2>
+  <div class="flex-container h-600px align-items-start">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+    <div class="flex-items">4</div>
+    <div class="flex-items">5</div>
+    <div class="flex-items">6</div>
+  </div>
+  <h2>flex-end</h2>
+  <div class="flex-container h-600px align-items-end">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+    <div class="flex-items">4</div>
+    <div class="flex-items">5</div>
+    <div class="flex-items">6</div>
+  </div>
+  <h2>flex-center</h2>
+  <div class="flex-container h-600px align-items-center">
+    <div class="flex-items">1</div>
+    <div class="flex-items">2</div>
+    <div class="flex-items">3</div>
+    <div class="flex-items">4</div>
+    <div class="flex-items">5</div>
+    <div class="flex-items">6</div>
+  </div>
+
+  <h1></h1>
+  <br>
+  <div class="flex-container" style="height: 250px; align-items: center; justify-content: center;">
+    <div class="flex-items">1</div>
+  </div>
+
+  <br><br><br><br><br>
+
+
+</body>
+</html>

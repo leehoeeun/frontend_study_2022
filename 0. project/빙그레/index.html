@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- 문자 인코딩 방식: 유니코드 -->
+    <meta charset="UTF-8">
+    <!-- 최신 IE 브라우저의 렌더링 방식을 사용하겠다는 의미 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 모바일 디바이스에서 웹페이지가 표시되는 방식 지정 -->
+    <!-- 뷰포트 너비를 다양한 모바일 디바이스의 가로 너비와 일치시키고, 화면의 확대/축소 100% -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- 오픈 그래프와 트위터 카드 설정 -->
+    <!-- 웹페이지가 검색엔진에서 검색되거나 카카오톡이나 트위터 같은 소셜미디어에 공유될 때 필요한 정보를 제공 -->
+    <!-- 오픈 그래프 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Heropy Coffee" />
+    <meta property="og:title" content="Heropy Coffee Landing" />
+    <meta property="og:description" content="헤로피커피는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
+    <meta property="og:image" content="./images/for_seo.jpg" />
+    <meta property="og:url" content="https://epic-darwin-271c77.netlify.app" />
+    <!-- 트위터 카드 -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="Heropy Coffeee" />
+    <meta property="twitter:title" content="Heropy Coffee Landing" />
+    <meta property="twitter:description" content="헤로피커피는 세계에서 가장 큰 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
+    <meta property="twitter:image" content="./images/for_seo.jpg" />
+    <meta property="twitter:url" content="https://epic-darwin-271c77.netlify.app" />
+  
+    <title>Star Coffee</title>
+  
+    <!-- 파비콘은 프로젝트 폴더의 최상위(Root) 경로에 포함시키면 자동 적용, 최상위 경로에 없으면 link로 적용 -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  
+    <!-- 구글 웹폰트 연결 -->
+    <!-- 구글 웹폰트: 경량화된 오픈 라이선스 폰트, 한글 지원하는지 확인 및 필요한 굵기만 선택해서 연결 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+  
+    <!-- 구글 머티리얼 아이콘 연결 -->
+    <!-- 구글에서 제공하는 머티리얼 스타일의 아이콘, 글자처럼 취급 가능한 장점 -->
+    <!-- 그 외 fontawesome, bootstrap icon 등 다양함 -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  
+    <!-- 스타일 초기화: 브라우저 별로 다른 기본스타일이 적용되는 것을 초기화 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+  
+    <!-- 슬라이드 라이브러리 Swiper.js 연결 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  
+    <!-- gsap 연결하기: 순서 주의(main.js에서 사용하니까 더 앞에 위치) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/main.js" defer></script>
+  </head>
+<body>
+  <header>
+    <div class="inner">
+      <h1 class="logo">
+        <a href="#">
+          <img src="https://www.bing.co.kr/img/main/logo-pc.png" alt="logo">
+        </a>
+      </h1>
+      <nav class="gnb_wrap">
+        <ul class="gnb">
+          <li class="gnb_inner">
+            <a href="#" class="depth_1">회사소개</a>
+            <ul class="depth_2_wrap">
+              <li class="depth_2"><a href="#">CEO인사말</a></li>
+              <li class="depth_2"><a href="#">경영이념</a></li>
+              <li class="depth_2"><a href="#">사업분야</a></li>
+              <li class="depth_2"><a href="#">히스토리</a></li>
+            </ul>
+          </li>
+          <li class="gnb_inner">
+            <a href="#" class="depth_1">제품소개</a>
+            <ul class="depth_2_wrap">
+              <li class="depth_2"><a href="#">아이스크림</a></li>
+              <li class="depth_2"><a href="#">우유/치즈</a></li>
+              <li class="depth_2"><a href="#">발효유</a></li>
+              <li class="depth_2"><a href="#">커피</a></li>
+              <li class="depth_2"><a href="#">주스</a></li>
+              <li class="depth_2"><a href="#">음료</a></li>
+              <li class="depth_2"><a href="#">스낵/디저트</a></li>
+              <li class="depth_2"><a href="#">건강지향</a></li>
+              <li class="depth_2"><a href="#">수출제품</a></li>
+            </ul>
+          </li>
+          <li class="gnb_inner">
+            <a href="#" class="depth_1">지속가능경영</a>
+            <ul class="depth_2_wrap">
+              <li class="depth_2"><a href="#">지속가능경영 체계</a></li>
+              <li class="depth_2"><a href="#">Eco-Friendly</a></li>
+              <li class="depth_2"><a href="#">Shared Value</a></li>
+              <li class="depth_2"><a href="#">Global Integrity</a></li>
+              <li class="depth_2"><a href="#">윤리준법경영</a></li>
+              <li class="depth_2"><a href="#">사회공헌</a></li>
+              <li class="depth_2"><a href="#">보고서 및 정책</a></li>
+            </ul>
+          </li>
+          <li class="gnb_inner">
+            <a href="#" class="depth_1">투자정보</a>
+            <ul class="depth_2_wrap">
+              <li class="depth_2"><a href="#">재무정보</a></li>
+              <li class="depth_2"><a href="#">주식정보</a></li>
+              <li class="depth_2"><a href="#">전자공고</a></li>
+              <li class="depth_2"><a href="#">공시정보</a></li>
+              <li class="depth_2"><a href="#">IR자료실</a></li>
+            </ul>
+          </li>
+          <li class="gnb_inner">
+            <a href="#" class="depth_1">뉴스룸</a>
+            <ul class="depth_2_wrap">
+              <li class="depth_2"><a href="#">새소식</a></li>
+              <li class="depth_2"><a href="#">보도자료</a></li>
+              <li class="depth_2"><a href="#">빙그레 스토리</a></li>
+              <li class="depth_2"><a href="#">미디어 라이브러리</a></li>
+            </ul>
+          </li>
+          <li class="gnb_inner">
+            <a href="#" class="depth_1">고객센터</a>
+            <ul class="depth_2_wrap">
+              <li class="depth_2"><a href="#">고객상담</a></li>
+              <li class="depth_2"><a href="#">제품공급문의</a></li>
+              <li class="depth_2"><a href="#">사이버 부정신고</a></li>
+              <li class="depth_2"><a href="#">안전신문고</a></li>
+              <li class="depth_2"><a href="#">개인정보처리방침</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+      </nav>
+      
+      <div class="lang">
+        <div class="lang__inner">
+          <div class="lang__box">KR</div>
+          <ul>
+            <a href="#" class="ko">KR</a>
+            <a href="#" class="en">EN</a>
+            <a href="#" class="cn">CN</a>
+          </ul>
+        </div>
+      </div>
+      <div class="menu_ham"></div>
+    </div>
+    <div class="nav_bg"></div>
+  </header>
+
+  <section class="main"></section>
+</body>
+</html>

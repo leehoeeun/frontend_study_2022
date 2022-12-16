@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 조건문
+    // 조건식의 결과에 따라 다른 코드를 실행(분기)하는 구문이다.
+    // if문, switch문이 있다.
+
+    // if문
+    // if (값 또는 조건식) { 실행코드 }
+    let isShow = true; // 참 - 
+    const checked = false; // 거짓
+
+    if (isShow) {
+      console.log('Show!'); // ()에 들어가는 값, 조건이 참이면 실행코드를 작동한다
+    }
+
+    if (checked) {
+      console.log('Checked!'); // ()에 들어가는 값, 조건이 거짓이면 실행코드를 작동한다
+    }
+
+
+    //if ~ else
+    isShow = false; 
+
+    if (isShow) {
+      console.log('true'); // ()에 들어가는 값, 조건이 참이면 console에 'true'가 찍히고
+    } else {
+      console.log('false'); // ()에 들어가는 값, 조건이 거짓이면 console에 'false'가 찍히고
+    }
+
+    // if ~ else if ~ else
+    const score = 95;
+    if (score >= 90) {
+      console.log('A등급');
+    } else if (score >= 80) {
+      console.log('B등급');
+    } else if (score >= 70) {
+      console.log('C등급');
+    } else {
+      console.log('D등급');
+    }
+
+
+    // switch
+    const arr = [10, 20, 30];
+
+    switch (arr[0]) {
+      case 10:                      // arr[] 값이 
+        console.log('10입니다.');
+        break;                      // 조건마다 끝에 break; break문을 안써주면 break문을 만날때까지 밑에 코드들이 전부 실행됨
+      case 20:
+        console.log('20입니다.');
+        break;
+      case 30:
+        console.log('30입니다.');
+        break;
+      default:                      // 위 케이스에 다 매치가 안되면, default에 있는 것을 실행시켜라(옵션임~생략 가능함)
+      console.log('1~3 이외의 숫자입니다.');
+        break;
+    }
+
+    const os = 'linux';
+    switch (os) {
+      case 'window':
+        console.log('window입니다');
+        break;
+      case 'linux':
+        console.log('linux입니다');
+        break;
+      case 'mac':
+        console.log('mac입니다');
+        break;
+    
+      default:
+        console.log('그 외의 운영체제 입니다.');
+        break;
+    }
+
+    // if와 switch의 차이
+    // 1 동작 원리가 차이가 있음. 2. switch에서 case문에 복잡한 연삭식 사용이 불가능하다 [즉, 모든 switch문은 if문으로 변경할 수 있지만, 모든 if문은 switch문으로 변경할 수 없다]
+    // 명확한 값이 떨어질 때, switch를 쓰면 코드가 더 깔끔해짐(가독성)
+    // 속도차이는 별로 없고~, 
+
+    const arr2 = ['window', true, 22];
+    switch (arr2[2]) {
+      case 'window':
+        console.log('window입니다');
+        break;
+      case true:
+        console.log('true입니다');
+        break;
+      case 22:
+        console.log('22입니다');
+        break;
+    
+      default:
+        console.log('그 외의 운영체제 입니다.');
+        break;
+    }
+
+
+
+  </script>
+  
+</body>
+</html>

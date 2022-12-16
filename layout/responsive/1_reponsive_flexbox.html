@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .flex-container{
+      display: flex;
+      /* 방법1 */
+      flex-direction: row;
+      /* 방법2 */
+      /* flex-wrap: nowrap; */
+
+      font-size: 30px;
+      text-align: center;
+    }
+    .flex-item-left{
+      background-color: #f1f1f1;
+      padding: 10px;
+      /* 방법2 */
+      flex: 50%;
+    }
+    .flex-item-right{
+      background-color: dodgerblue;
+      padding: 10px;
+      flex: 50%;
+    }
+
+    .flex-item-first{
+      background-color: #f1f1f1;
+      padding: 10px;
+      flex: 1;
+    }
+    .flex-item-unimportant{
+      background-color: dodgerblue;
+      padding: 10px;
+      flex: 1;
+    }
+    .flex-item-last{
+      background-color: orange;
+      padding: 10px;
+      flex: 1;
+    }
+    /* 반응형 레이아웃 - 1열 레이아웃 만들기 */
+    /* ~800px 이하일 때 아래 조건으로 적용됨 */
+    /* 방법1) lex-direction: row → column; 방법2) flex-wrap: nowrap → wrap; 변경하고, flex-item 에 flex: 50% → 100%; 변경하면 됨*/
+    @media screen and (max-width: 800px) {
+      .flex-container{
+        /* 방법1 */
+      flex-direction: column;
+      /* 방법2 */
+      /* flex-wrap: wrap; */
+    }
+    /* 방법2 */
+    /* .flex-item-left, .flex-item-right{
+      flex: 100%;
+    } */
+    .flex-item-unimportant{
+      display: none;
+    }
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <h1>Responsive Flexbox</h1>
+  <div class="flex-container">
+    <div class="flex-item-left">1</div>
+    <div class="flex-item-right">2</div>
+  </div>
+
+
+
+  <h1>Responsive Flexbox</h1>
+  <div class="flex-container">
+    <div class="flex-item-first">1</div>
+    <div class="flex-item-unimportant">2</div>
+    <div class="flex-item-last">3</div>
+  </div>
+</body>
+</html>

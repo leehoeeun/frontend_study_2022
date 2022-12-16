@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- input(인라인 블록) : 데이터를 입력하는 요소 -->
+  <!-- type 속성 : 입력받을 데이터 타입을 지정 -->
+  <!-- 
+    인라인-블록 요소 : 기본적인 특징은 인라임 요소와 동일 블록요소 처럼 가로/세로 길이와 상하/좌우 여백을 모두 지정가능
+   -->
+
+   <!-- 일반 텍스트 사용법 -->
+   <input type="text">
+
+   <!-- 값을 미리 입력 -->
+   <input type="text" value="홍길동">
+
+   <!-- 입력할 값의 힌트, 입력창에 포커스 했을 때 CSS로 글자 안보이게 할 수 있음 -->
+   <input type="text" placeholder="YYYY/MM/DD">
+
+  <!-- 비활성화 : 선택불가, submit 불가 -->
+  <input type="text" disabled>
+
+  <!-- 읽기 전용 : 선택가능, submit 가능-->
+  <input type="text" value="홍길동" readonly>
+
+  <hr>
+  <!-- 체크박스 사용법 : label의 바인딩-->
+  <label>
+    <input type="checkbox"> Apple
+  </label>
+
+  <label>
+    <input type="checkbox" checked> Banana
+  </label>
+
+  <br>
+  <!-- label의 다른 사용법 : label의 바인딩 -->
+  <input type="checkbox" id="apple">
+  <label for="apple">Apple</label>
+  <input type="checkbox" id="banana">
+  <label for="banana">Banana</label>
+  <!-- 
+    label의 바인딩 조건: 
+    1. label 요소 내부에 요소응 배치하야 레이블을 요소에 바인딩
+    2. for 속성이 <label> 관련 요소의 id 속성과 같아야 함
+   -->
+
+   <!-- 
+    label 사용 이점(웹 접근성과 관련) :
+    1. 스크린 리더 사용자(사용자가 요소에 초점을 맞추면 레이블을 소리내어 읽음)
+    2. 매우 작은 영역(예: 확인란)을 클릭하는 데 어려움이 있는 사용자
+    - 사용자가 요소 내의 텍스트를 클릭하면 입력이 토글되기 때문(히트영역이 증가함)
+    -->
+    <br>
+    <!-- 라디오 버튼 사용법 -->
+    <!-- type만 썼을 경우 -->
+    <label>
+      <input type="radio" > Apple
+    </label>
+    <label>
+      <input type="radio"> Banana
+    </label>
+    <br>
+    <!-- name 속성으로 그룹화 -->
+    <!-- 체크박스는 중복 선택 가능, 라디오 버튼은 그룹당 한 개만 선택 가능 -->
+    <label>
+      <input type="radio" name="fruits" checked> Apple
+    </label>
+    <label>
+      <input type="radio" name="fruits"> Banana
+    </label>
+    <br>
+
+    <!-- 그 밖에 다른 입력 양식들(w3shcool 참고) -->
+    <input type="button" value="닫기">
+    <button type="button"><b>닫기
+    </b></button>
+    <!-- input태그는 버튼 내에 텍스트를 꾸미지 못하지만, button 태그는 그 안에 요소를 꾸밀 수 있다 -->
+    <!-- button 태그 내 type 속성을 지정하는 게 브라우저가 버튼 유형을 파악하는데 좀 더 빠르다 -->
+
+
+    <hr>
+    <input type="color" name="" id="" value="#ff0000">
+    <hr>
+    <input type="date" name="" id="">
+    <input type="datetime-local" name="" id="">
+    <input type="time" name="" id="">
+    <hr>
+    
+    <input type="file">
+    <input type="file" name="" id="" multiple>
+
+    <hr>
+    <input type="range" name="" id="" min="0" max="10">
+
+    <hr>
+    <input type="password" name="" id="">
+
+    <hr>
+    <input type="search" name="" id="">
+    <!-- ????????????????? -->
+
+
+    <hr>
+    <select name="cars" id="cars">
+      <option value="volvo">volvo</option>
+      <option value="benz">benz</option>
+      <option value="audi">audi</option>
+    </select>
+
+    <hr>
+
+    <textarea name="" id="" cols="30" rows="6"></textarea>
+    <textarea name="" id="" cols="30" rows="6" style="resize: none;"></textarea>
+
+
+</body>
+</html>
