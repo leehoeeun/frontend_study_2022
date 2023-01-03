@@ -12,10 +12,15 @@
   // 질의응답 창(prompt)을 이용하여 사용자에게 숫자 2개를 입력받은 다음 그 합을 출력하세요.
 
   // 1번 풀이
-  const a = prompt('첫번째 숫자를 입려하세요', '0');
-  const b = prompt('두번째 숫자를 입려하세요', '0');
-  document.write(Number(a) + Number(b));
+  const a = prompt('첫번째 숫자를 입력하세요', '0'); 
+  const b = prompt('두번째 숫자를 입력하세요', '0');
+  document.write(Number(a) + Number(b)); //prompt가 출력하는 모든 값의 타입이 문자(String)로 나오기 때문에 숫자로 출력해주는 객체 Number()를 쓴다. 
   
+  // Number()을 애초에 prompt에 적용할 수 있음
+  // const a = Number(prompt('첫번째 숫자를 입력하세요', '0')); 
+  // const b = Number(prompt('두번째 숫자를 입력하세요', '0'));
+  // document.write(a + b); 
+
 </script>
 </body>
 </html>
