@@ -21,16 +21,37 @@
     // 풀이4
     
 
-    if (height >=150) {
-      document.write('놀이기구 이용 가능');
-    }else{
-      const parentChild = confirm('부모님과 함께 왔나요?');
-      if(parentChild) {
-      document.write('좋은 시간 보내렴~');
-      }else {
-      document.write('어른 모시고 다시 오렴~');
-      }
+    // if (height >=150) {
+    //   document.write('놀이기구 이용 가능');
+    // }else{
+    //   const parentChild = confirm('부모님과 함께 왔나요?');
+    //   if(parentChild) {
+    //   document.write('좋은 시간 보내렴~');
+    //   }else {
+    //   document.write('어른 모시고 다시 오렴~');
+    //   }
+    // }
+
+
+    // 다른 풀이
+    // if (height < 150) {
+    //   const parentChild = confirm('부모님과 함께 왔니?');
+    //   if(parentChild) {
+    //     msg = '좋은 시간 보내렴~';
+    //   }else{
+    //     msg = '어른 모시고 다시 오렴~';
+    //   }
+    // }
+    // document.write(msg);
+
+    // 삼항 연산자
+    if (height < 150) {
+      const parentChild = confirm('부모님과 함께 왔니?');
+      msg = parentChild? '좋은 시간 보내렴~' : '어른 모시고 다시 오렴~';
     }
+    document.write(msg);
+
+
 
   </script>
 </head>

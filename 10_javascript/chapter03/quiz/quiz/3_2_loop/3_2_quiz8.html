@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 문제8
+    // 이중 for문을 이용해 
+    // 아래와 같이 출력하세요.
+    // *
+    // **
+    // ***
+    // ****
+    // *****
+
+    // 풀이8
+
+    // let html = '*';
+    // html += '*';
+    // html += '*';
+    // html += '*';
+    // document.write(html);
+
+    // for (let i = '*'; i <= '*****'; i++) { //3행을 먼저
+    //   for (let j = 1; j <= 2; j++) { //2열을 그 다음
+    //     document.write(i + '행' + j + '열');
+    //   }
+    //   document.write('<br>');
+    // }
+
+    // for (let i = 2; i <= 9; i++) {
+    //   document.write('**** ' + i + '단****', '<br>');
+    //   for (let x = 1; x <= 9; x++) {
+    //     document.write(`${i} x ${x} = `, i * x, '<br>');
+    //   }
+    // }
+
+    for (let i = 1; i <= 5; i++) { //5행을 먼저
+      for (let j = 1; j <= i; j++) { // 1행에 1별, 2행에 2별...5행에 5별, 즉 i만큼 j가 반복되면 됨
+        document.write('*');
+      }
+      document.write('<br>');
+    }
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
