@@ -26,6 +26,7 @@
     document.write(`현재 월: ${nowMonth + 1}<br>`);
     document.write(`현재 일: ${nowDate}<br>`);
     document.write(`현재 요일: ${nowDay}<br>`);
+    document.write(`현재 요일: ${today}<br>`);
 
     // 특정 날짜 정보를 갖는 날짜 객체 생성
     // new Date(연, 월, 일, 시, 분, 초, 밀리초);
@@ -50,22 +51,80 @@
     // 1분(60초) = 1000 * 60
     // 1시간(60분) = 1000 * 60 * 60
     // 1일(24시간) = 1000 * 60 * 60 * 24
-    const classEndDate = new Date(2023, 2, 10); // 2023-03-10
-    const diffDate = classEndDate.getTime() - new Date().getTime(); // new Date()는 오늘 날짜를 나타냄, getTime()은 밀리초로 반환함
-    // getTime()은 1970년 1월 1일 0시 0분 0초로부터 지금까지 몇 ms가 지났는지를 반환해준다.
+    // const classEndDate = new Date(2023, 2, 10); // 2023-03-10
+    // const diffDate = classEndDate.getTime() - new Date().getTime(); 
+    // // new Date()는 오늘 날짜를 나타냄, getTime()은 밀리초로 반환함
+    // // getTime()은 1970년 1월 1일 0시 0분 0초로부터 지금까지 몇 ms가 지났는지를 반환해준다.
 
-    const result = Math.ceil(diffDate / (1000 * 60 * 60 * 24)); // Math.ceil() 올림 수학 함수, 0.2시간 남은 것도 D-1이 남은 거니까
-    document.write('<h1>오늘부터 종강까지 남은 날짜</h1>');
-    document.write(`D-day: ${result}일 남았습니다.`);
-    console.log(diffDate);
-
-
-
+    // const result = Math.ceil(diffDate / (1000 * 60 * 60 * 24)); // Math.ceil() 올림 수학 함수, 0.2시간 남은 것도 D-1이 남은 거니까
+    // document.write('<h1>오늘부터 종강까지 남은 날짜</h1>');
+    // document.write(`D-day: ${result}일 남았습니다.`);
+    // console.log(diffDate);
 
 
   </script>
+  <style>
+  ul{
+    list-style: none;
+  }
+  .timer {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .timer li span {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    background-color: #e6006c;
+  }
+  </style>
 </head>
 <body>
+  <ul class="timer back-to-position to-right delay-2">
+    <li>
+      <span class="recruit--days"></span>일
+    </li>
+    <li>
+      <span class="recruit--hours"></span>시
+    </li>
+    <li>
+      <span class="recruit--minutes"></span>분
+    </li>
+    <li>
+      <span class="recruit--seconds"></span>초
+    </li>
+  </ul>
   
+  <script>
+    const recruitDate = document.querySelector(".recruit--days");
+    const recruitHours = document.querySelector(".recruit--hours");
+    const recruitMinutes = document.querySelector(".recruit--minutes");
+    const recruitSeconds = document.querySelector(".recruit--seconds");
+
+    function finishDay() {
+    const classEndDate = new Date(2023, 2, 10, 18, 20, 0); // 2023-03-10 T18:20:00
+    const diffDate = classEndDate.getTime() - new Date().getTime();
+
+    const resultDay = String(Math.floor(diffDate / (1000 * 60 * 60 * 24))).padStart(2,"0"); 
+    const resultHour = String(Math.floor((diffDate / (1000 * 60 * 60)) % 24)).padStart(2,"0");
+    const resultMin = String(Math.floor((diffDate / (1000 * 60)) % 60)).padStart(2,"0");
+    const resultSecond = String(Math.floor((diffDate / 1000) % 60)).padStart(2,"0");
+
+    recruitDate.textContent = resultDay;
+    recruitHours.textContent = resultHour;
+    recruitMinutes.textContent = resultMin;
+    recruitSeconds.textContent = resultSecond;
+    }
+    
+    finishDay();
+    // setInterval(finishDay, 1000);
+  </script>
 </body>
 </html>
