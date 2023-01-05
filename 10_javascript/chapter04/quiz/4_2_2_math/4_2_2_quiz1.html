@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 문제1
+    // 로또 번호 추첨기(미완성)
+    // 1~45까지의 랜덤한 정수값 6개 출력
+
+    // 풀이1
+    // 1 <= (Math.random() * 45) + 1 < 46
+    // document.write(Math.floor(Math.random() * 45) + 1, '<br>');
+
+    // const rotoNum1 = Math.floor(Math.random() * 45) + 1
+    // const rotoNum2 = Math.floor(Math.random() * 45) + 1
+    // const rotoNum3 = Math.floor(Math.random() * 45) + 1
+    // const rotoNum4 = Math.floor(Math.random() * 45) + 1
+    // const rotoNum5 = Math.floor(Math.random() * 45) + 1
+    // const rotoNum6 = Math.floor(Math.random() * 45) + 1
+    
+    // document.write(`${rotoNum1}, ${rotoNum2}, ${rotoNum3}, ${rotoNum4}, ${rotoNum5}, ${rotoNum6}`);
+
+    // 반복문을 이용하여 6개의 숫자가 나오도록
+    for (let i = 0; i < 6; i++ ) {  // (let i = 1; i <= 6; i++) 에서 초기화 식을 i = 0으로 쓰는걸 권장함, index 배열과 동일하게
+      document.write(` ${Math.floor(Math.random() * 45) + 1}`);
+    }
+    document.write('<br>');
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
