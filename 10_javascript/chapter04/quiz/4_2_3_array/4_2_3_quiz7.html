@@ -14,7 +14,29 @@
     const lottoArr = []; // 빈 배열
     
     // 풀이7
-    
+
+    // for (let i = 0; i < 6; i++) {      
+    //   lottoArr[i] = Math.floor(Math.random()*45) +1;
+    // }
+    // document.write(lottoArr);
+
+    // while (lottoArr.length < 6) {
+    //   const randomNum = Math.floor(Math.random() * 45) + 1;
+    //   if (!lottoArr.includes(randomNum)) {  //lottoArr배열에 randomNum의 숫자가 포함되어 있지 않냐? 
+    //     lottoArr.push(randomNum); // if문의 조건식이 true면 lottoArr 배열에 추가해라
+    //   }
+    // }
+
+    let i = 0;
+    while (i < 6) {
+      const randomNum = Math.floor(Math.random() * 45) + 1;  // const randomNum는 while()문 안에 있는 변수, 즉 지역변수로 while()이 끝나면 없어지기 때문에 반복하여 선언해도 error로 보지 않는다
+      if (!lottoArr.includes(randomNum)) {  //lottoArr배열에 randomNum의 숫자가 포함되어 있지 않냐? 
+        lottoArr[i] = randomNum;
+        i++;
+      }
+    }
+
+
   </script>
 </head>
 <body>
