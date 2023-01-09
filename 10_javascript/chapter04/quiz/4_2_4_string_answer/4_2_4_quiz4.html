@@ -14,23 +14,15 @@
 
     const str = prompt('숫자를 입력하세요.');
     const result = [];
-    // const str = '225468'; // 이렇게 들어온다면, 반복문을 돌려서 각각의 문장을 빈 배열 result에 순차적으로 들어가게 한다! result[i]
-    // 그 다음 if문으로 짝수 홀수를 판별해서 '-'를 붙여줌
 
     // 풀이4
-    // 반복문 돌면서 각각의 문장이 
-
-    for (let i =0; i < str.length; i++) {
-      if(Number(str[i]) % 2 === 0) {
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] % 2 === 0) {
         result.push('-');
-        result.push(str[i]);
-      }else {
-        result.push(str[i]);
       }
-      console.log(result);
+      result.push(str[i]);
     }
-
-
+    console.log(result);
   </script>
 </head>
 <body>

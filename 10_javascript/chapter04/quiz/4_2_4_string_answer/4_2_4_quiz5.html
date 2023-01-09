@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="file" multiple>
+
+  <script>
+    // 문제5
+    // 문자열 객체를 이용하여 파일 확장자를 추출해서 fileExt 변수에 저장하고,
+    // 이미지 파일(jpg, png, gif)이 맞는지 검사하여
+    // 아닐 경우에만 alert() 창을 띄워 경고하기.
+
+    // 샘플 코드
+    // const imgFileExt = ['jpg', 'png', 'gif'];
+    // let fileExt;
+    // const fileInput = document.querySelector('input[type=file]');
+    // fileInput.addEventListener('change', function () {
+    //   // debugger;
+    //   console.log(fileInput);
+    //   console.log(fileInput.files);
+    //   console.log(fileInput.files[0]);
+    // });
+
+    // 풀이5
+    const imgFileExt = ['jpg', 'png', 'gif'];
+    let fileExt;
+    const fileInput = document.querySelector('input[type=file]');
+
+    fileInput.addEventListener('change', function () {
+      // debugger;
+      console.log(fileInput); // input DOM
+      console.log(fileInput.files); // FileList 객체
+      console.log(fileInput.files[0]); // File 객체 // .점 찍고 객체{}대괄호를 쓰면 에러가 난다! 배열은 아니지만, 객체 value 호출할 때도 []로 부를 수 있다!
+      // 4_1_object.html 에서 객체 호출할 때 대괄호 쓰는 내용 적혀 있음
+
+
+      const fileName = fileInput.files[0].name;
+      fileExt = fileName.substring(fileName.lastIndexOf('.') + 1).toLowerCase();  // 파일명에 .이 있을 수 있기 때문에 뒤에서 .의 위치를 찾음 // upperCase로 하려면 imgFileExt에 이름을 ['JPG', 'PNG', 'GIF']
+      console.log(fileExt);
+
+      // if (fileExt !== 'jpg' &&
+      //     fileExt !== 'png' && 
+      //     fileExt !== 'gif') {
+      //       alert('이미지 파일이 아닙니다!');
+      // }
+
+      if (!imgFileExt.includes(fileExt)) {
+        alert('이미지 파일이 아닙니다!');
+      }
+    });
+  </script>
+</body>
+</html>
