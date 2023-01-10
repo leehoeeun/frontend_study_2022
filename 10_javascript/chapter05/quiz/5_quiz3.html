@@ -24,10 +24,11 @@
             document.write(`from: ${from}<br>`);
             if (from < to) {
               from++;
+              console.log(from);
             }else {
               clearInterval(counter);
             }
-        }, 1000);
+        }, 3000);
     }
 
     printNumbers(5, 10);

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+    // 1. var에 대해서
+    // TODO : 주석 풀기
+    // for (let i = 0; i < 10; i++) {
+    //   var leak = `You are Doughtnut${i}`;
+    // }
+    // document.write(leak, '<br>');
+
+    // function myFunc() {
+    //   for (let i = 0; i < 10; i++) {
+    //   var leakFunc = `You are Doughtnut${i}`;
+    //   }
+    //   document.write(leakFunc, '<br>');
+    // }
+    // document.write(leakFunc, '<br>');
+    // myFunc();
+
+
+    // 2. let에 대해서
+    // TODO : 주석 풀기
+    // let leeet = 'I love you';
+    // if (leeet) {
+    //   let leeet = 'I hate you';
+    //   console.log(leeet);
+    // }
+    // console.log(leeet);
+
+    // var vaaar = 'I love you';
+    // if (vaaar) {
+    //   var vaaar = 'I hate you'; // var는 블록문에 종속되지 않기 때문에 마지막 var에 종속된다
+    //   console.log(vaaar);
+    // }
+    // console.log(vaaar);
+
+    // 3. const
+    // TODO : 주석 풀기
+    // const person = {
+    //   name: 'Mr.Ro',
+    //   id : 'Doughtnut',
+    //   age : 94
+    // };
+    // person.age = 30;
+    // document.write(person.age);
+
+    // const person2 = {
+    //   name: 'Mrs.Lee',
+    //   id : 'BestWoman',
+    //   age : 95
+    // };
+    // person2.age = 29;
+    // document.write(person2.age, '<br>');
+    // Object.freeze(person2);
+    // person2.age = 95;
+    // document.write(person2.age, '<br>');
+
+
+    // 4. 선언하기 전에 사용할 수 있는 var
+    // document.write(me); // undefined
+    // var me = 'leehoeeun';
+
+    // document.write(you); //error
+    // let you = 'Mr.ro';
+
+    // 5. var는 중복 선언 허용
+    // var user = 'Me';
+    // var user = 'You';
+    // document.write(user);    
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

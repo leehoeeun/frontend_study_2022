@@ -59,20 +59,21 @@
     // document.write(resultAvg, '<br>');
 
     
-    let imgNum = 1;
-    function gallery(direct) {
-      if (direct) {
-        if (imgNum === 8) {imgNum = 0};
-        imgNum++;
-      }else {
-        if (imgNum === 1) {imgNum = 9};
-        imgNum--;
-      }
-      console.log(imgNum)
-      const imgTag = document.querySelector('.photo');
-      imgTag.setAttribute('src', `images/pic_${imgNum}.jpg`);
-    }
+    // let imgNum = 1;
+    // function gallery(direct) {
+    //   if (direct) {
+    //     if (imgNum === 8) {imgNum = 0};
+    //     imgNum++;
+    //   }else {
+    //     if (imgNum === 1) {imgNum = 9};
+    //     imgNum--;
+    //   }
+    //   console.log(imgNum)
+    //   const imgTag = document.querySelector('.photo');
+    //   imgTag.setAttribute('src', `images/pic_${imgNum}.jpg`);
+    // }
 
+    // let config1 = `hello`;
 
     // let num = 0;
     // function testFunc() {
@@ -83,13 +84,63 @@
     // }
     // testFunc();
 
+    // 2023-01-10 복습
+    // function CheckWeight(name, height, weight) {
+    //   this.userName = name;
+    //   this.userHeight = height;
+    //   this.userWeight = weight;
+
+    //   this.getInfo = function () {
+    //     let str = '';
+    //     str += `이름: ${this.userName}, `;
+    //     str += `키: ${this.userHeight}, `;
+    //     str += `몸무게: ${this.userWeight}, `;
+    //     return str;
+    //   }
+    // }
+    // const call = new CheckWeight('이회은', '159', '45');
+    // document.write(call.getInfo());
+    // console.log(call);
+    // console.log(call.getInfo());
+
+    // 내장함수
+    // console.log(parseInt('10.33'));
+    // console.log(parseInt('15px'));
+    
+    // document.write(String(5), '<br>');
+    // document.write(String([1, 2, 3, 4]), '<br>');
+    // document.write(String(new Date()),'<br>');
+
+    // document.write(Number(5), '<br>');
+    // document.write(Number([1, 2, 3, 4]), '<br>');
+    // document.write(Number(new Date()),'<br>');
+    // document.write(Number(true),'<br>');
+    // document.write(Number(false),'<br>');
+    // document.write(Number('123'),'<br>');
+    // document.write(Number('abc'),'<br>');
+
+    // 논리형 데이터로 반환
+    // false 값들 : false, 0(-0), ''(""), undefined, null, NaN
+    // document.write(Boolean('abc'),'<br>');
+    // document.write(Boolean(''),'<br>');
+    // document.write(Boolean(' '),'<br>');
+    // document.write(Boolean(0),'<br>');
+    // document.write(Boolean(1),'<br>');
+    // document.write(Boolean(null),'<br>');
+
+    // document.write(isNaN(5),'<br>');
+    // document.write(isNaN('123'),'<br>');
+    // document.write(isNaN('abc'),'<br>');
+    // document.write(isNaN(5 - 2),'<br>');
+    // document.write(isNaN('5' - 2),'<br>');
+
 
   </script>
 </head>
 <body>
   <!-- <button onclick="changeColor()">배경색 변경</button>   -->
 
-  <div>
+  <!-- <div>
     <p>
       <button onclick="gallery(0)">이전</button>
       <button onclick="gallery(1)">다음</button>
@@ -97,7 +148,7 @@
     <p>
       <img src="images/pic_1.jpg" alt="photo" class="photo">
     </p>
-  </div>
+  </div> -->
 
 </body>
 </html>
