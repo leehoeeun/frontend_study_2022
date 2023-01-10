@@ -59,19 +59,19 @@
     // document.write(resultAvg, '<br>');
 
     
-    // let imgNum = 1;
-    // function gallery(direct) {
-    //   if (direct) {
-    //     if (imgNum === 8) return;
-    //     imgNum++;        
-    //   }else {
-    //     if (imgNum === 1) return;
-    //     imgNum--;
-    //   }
-    //   console.log(imgNum)
-    //   const imgTag = document.querySelector('.photo');
-    //   imgTag.setAttribute('src', `images/pic_${imgNum}.jpg`);
-    // }
+    let imgNum = 1;
+    function gallery(direct) {
+      if (direct) {
+        if (imgNum === 8) {imgNum = 0};
+        imgNum++;
+      }else {
+        if (imgNum === 1) {imgNum = 9};
+        imgNum--;
+      }
+      console.log(imgNum)
+      const imgTag = document.querySelector('.photo');
+      imgTag.setAttribute('src', `images/pic_${imgNum}.jpg`);
+    }
 
 
     // let num = 0;
@@ -89,7 +89,7 @@
 <body>
   <!-- <button onclick="changeColor()">배경색 변경</button>   -->
 
-  <!-- <div>
+  <div>
     <p>
       <button onclick="gallery(0)">이전</button>
       <button onclick="gallery(1)">다음</button>
@@ -97,7 +97,7 @@
     <p>
       <img src="images/pic_1.jpg" alt="photo" class="photo">
     </p>
-  </div> -->
+  </div>
 
 </body>
 </html>
