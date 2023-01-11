@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+  
+    // function getLocation(continent, country, city) {
+    //     if(typeof country === 'undefined') {
+    //       country = 'Korea';
+    //     }
+    //     if(typeof city === 'undefined') {
+    //       city = 'seoul';
+    //     }
+    //     console.log(city, country, continent);
+    // }
+    // getLocation('Asia');
+    // getLocation('Asia', 'Betnam');
+    // getLocation();
+
+    // function getLocation2(continent, country, city) {
+    //     if(typeof country === 'undefined') {
+    //       country = 'Korea';
+    //     }
+    //     if(typeof city === 'undefined') {
+    //       city = 'seoul';
+    //     }
+    //     console.log(city, country, continent);
+    // }
+    // getLocation2('Asia', undefined, undefined);
+    // getLocation2('Asia', 'Betnam', undefined);
+
+    // function getLocation3(continent, country = 'Korea', city = 'seoul') {
+    //     console.log(continent, country, city);
+    // }
+    // getLocation3('Asia');
+    // getLocation3('Asia', 'Betnam');
+    // getLocation3('Asia', undefined, 'Inchoen');
+
+
+
+    function  myMoney(x, y = 5) {
+      return x + y;
+    }
+    console.log(myMoney(2, 7));
+    console.log(myMoney(2));
+
+    function  myMoney2(total, tax = 0.2, tip = 0.3) {
+      return total + (total * tax) + (total * tip);
+    };
+    console.log(myMoney2(100, 0.1, 0.2));
+    console.log(myMoney2(100));
+    console.log(myMoney2(100, undefined, 0.1));
+
+
+
+    function  myMoney3({total, tax = 0.2, tip = 0.3} = {}) {
+      return total + (total * tax) + (total * tip);
+    };
+    console.log(myMoney3({total: 100, tip: 0.5}));
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

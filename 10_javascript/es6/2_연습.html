@@ -78,11 +78,6 @@
     //   () => {alert('취소버튼을 누르셨습니다.'), document.write('미동의')}
     // );
 
-
-
-
-
-
     // Quiz3
     // function addMember(name) {
     //   return {
@@ -103,13 +98,125 @@
     // console.log(member);
 
 
+    // 2023-01-11
+    // 화살표함수와 this, argument에 대해
+    
+    // console.log(this);
+
+
+
+
+    //argument
+    // function example() {
+    //   console.log(arguments[0]);
+    //   console.log(arguments[1]);
+    //   console.log(arguments[2]);
+    //   console.log(...arguments);
+    // };
+    // example(1, 2, 3);
+
+    // const showWinner = function () {
+    //   const winner = arguments[0];
+    //   console.log(`${winner} was the winner`);
+    // };
+    // showWinner('Leehoeeun', 'MinRo', 'anothers');
+
+    // const showWinner2 = () => {
+    //   const winner = arguments[1];
+    //   console.log(`${winner} was the winner`);
+    // };
+    // // showWinner2('Leehoeeun', 'MinRo', 'anothers');
+
+    // const showWinner3 = (...arguments) => {
+    //   const winner = arguments[1];
+    //   console.log(`${winner} was the winner`);
+    // };
+    // showWinner3('Leehoeeun', 'MinRo', 'anothers');
 
 
 
 
   </script>
+  <style>
+    /* TODO : 묶음(1) */
+    .opening{
+      background-color: red;
+    }
+    .btn.on{
+      color: #fff;
+      background-color: red;
+    }
+  </style>
 </head>
 <body>
-  
+  <!-- TODO : 묶음(1) -->
+  <!-- <div class="box open">
+    This is a box
+  </div> -->
+
+  <!-- TODO : 묶음(2) -->
+  <button type="button" class="btn">click</button>
+
+  <script>
+    // TODO : 묶음(1)
+    // box를 누를 때 마다 배경색을 변경되도록 하고, 0.5초뒤에 다시 없어지도록 하는 작업
+    // const box = document.querySelector('.box');
+    // box.addEventListener('click', function () {
+    //   this.classList.toggle('opening');
+
+    //   // setTimeout(function () {
+    //   //   // console.log(this);
+    //   //   box.classList.toggle('opening');
+    //   // }, 500);
+
+    //   setTimeout(() => {
+    //     console.log(this);
+    //     this.classList.toggle('opening');
+    //   }, 2000);
+
+    // });
+
+    // TODO : 묶음(2)
+    // 올바른 함수 표현식과 this 사용
+    // const button = document.querySelector('.btn');
+    // button.addEventListener('click', function () {
+    //   console.log(this);
+    //   this.classList.toggle('on');
+    // });
+
+    // 올바르지 않은 화살표 함수와 this 사용
+    // const button = document.querySelector('.btn');
+    // button.addEventListener('click', () => {
+    //   console.log(this);
+    //   this.classList.toggle('on');
+    // });
+
+    // // 올바른 함수 표현식과 this 사용
+    // const person1 = {
+    //   name: 'MinRo',
+    //   age: 30,
+    //   grow: function () {
+    //     this.age++;
+    //     console.log(this.age);
+    //   }
+    // };
+    // person1.grow();
+
+    // // 올바르지 않은 화살표 함수와 this 사용
+    // const person2 = {
+    //   name: 'MinRo',
+    //   age: 30,
+    //   grow: () => {
+    //     this.age++;  // undefined + 1 = NaN
+    //     console.log(this.age); // NaN
+    //   }
+    // };
+    // person2.grow();
+
+
+
+
+
+  </script>
 </body>
 </html>

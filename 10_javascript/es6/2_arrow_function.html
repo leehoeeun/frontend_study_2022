@@ -131,7 +131,7 @@
     // 화살표 함수를 피해야 하는 경우
     //아래 **와 같은 경우에 주의해서 사용
 
-
+    // 2023-01-11 // TODO : 복습
     // arguments 객체에 대한 접근방식
     // arguments 유사 객체 함수
     function example() {
@@ -173,48 +173,48 @@
   <script>
     // 2023-01-11 // TODO : 복습
     // *
-    // const box = document.querySelector('.box');
-    // box.addEventListener('click', function () {
-    //   this.classList.toggle('opening');  // class에 opening이 없으면 opening을 넣어주고, 있으면 opening 클래스를 삭제해주고
+    const box = document.querySelector('.box');
+    box.addEventListener('click', function () {
+      this.classList.toggle('opening');  // class에 opening이 없으면 opening을 넣어주고, 있으면 opening 클래스를 삭제해주고
     
 
-    // setTimeout(function () {  // window.setTimeout()에서 window가 생략됨
-    //   console.log(this); // this = window를 가르킴
-    //   this.classList.toggle('opening'); 
-    // }, 500);
+    setTimeout(function () {  // window.setTimeout()에서 window가 생략됨
+      console.log(this); // this = window를 가르킴
+      this.classList.toggle('opening'); 
+    }, 500);
 
     // 해결방법
     // setTimeout(() => {  
     //   console.log(this); // box 객체, 상위 스코프에서 상속됨 // this대신 box를 쓰면 위 함수에서 문제 안됨
     //   this.classList.toggle('opening'); 
     // }, 500);
-    // });
+    });
 
 
 
     // **
-    // const button = document.querySelector('.btn');
-    // button.addEventListener('click', () => {
-    //   this.classList.toggle('on');    // 오류 : 여기서 this는 상위 스코프인 window 객체를 가르킴
-    // });
+    const button = document.querySelector('.btn');
+    button.addEventListener('click', () => {
+      this.classList.toggle('on');    // 오류 : 여기서 this는 상위 스코프인 window 객체를 가르킴
+    });
 
-    // const person1 = {
-    //   age: 10,
-    //   grow: function () {
-    //     this.age++;
-    //     console.log(this.age);
-    //   }
-    // };
-    // person1.grow();
+    const person1 = {
+      age: 10,
+      grow: function () {
+        this.age++;
+        console.log(this.age);
+      }
+    };
+    person1.grow();
 
-    // const person2 = {
-    //   age: 10,
-    //   grow: () => {    // 화살표 함수에서 this는 상위 스코프, 즉 window 객체를 가르키고 window에 age라는 속성값이 없으니 undefined로 나옴
-    //     this.age++;  // undefined++;
-    //     console.log(this.age); // NaN
-    //   }
-    // };
-    // person2.grow();
+    const person2 = {
+      age: 10,
+      grow: () => {    // 화살표 함수에서 this는 상위 스코프, 즉 window 객체를 가르키고 window에 age라는 속성값이 없으니 undefined로 나옴
+        this.age++;  // undefined++;
+        console.log(this.age); // NaN
+      }
+    };
+    person2.grow();
     
 
 
