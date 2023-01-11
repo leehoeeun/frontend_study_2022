@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 템플릿 리터럴
+    // 백틱(``) 기호를 사용하여 문자열 삽입
+
+    // 1. 문자열 삽입
+    // ES5
+    var name = 'goni';
+    var greeting = 'Hello my name is ' + name;
+
+    console.log(greeting);
+
+    // ES6
+    const name2 = 'goni';
+    const greeting2 = `Hello my name is ${name}`;
+
+    console.log(greeting2);
+
+    // 2. 표현식 삽입
+    // ES5
+    var exp1 = 1;
+    var exp2 = 10;
+    console.log('1 * 10 is ' + (exp1 * exp2));
+
+    // ES6
+    console.log(`1 * 10 is ${exp1} * ${exp2}`);  
+    console.log(`1 * 10 is ${exp1 * exp2}`);  // ${} 안에 표현식 작성 가능함
+
+    // 3. 여러 줄 문자열 생성
+    // ES5: 각 행마다 백슬래시(\)를 삽입해야 함
+    // 단, 백슬래시를 문장 줄바꿈으로 인식 못함
+    var text = 'hello,\
+my name is Lee.\
+How are you?';
+    console.log(text);
+
+    // ES6
+    // 문장 줄바꿈으로 인식함
+    var content = `hello,
+my name is Lee.
+How are you?`;
+    console.log(content);
+
+
+    // quiz
+    // quiz 4.1
+    // let a = "Hello,";
+    // let b = "my";
+    // let c = "name";
+    // let d = "is";
+    // let e = "Tom";
+
+    // let result = `${a} {b} {c} {d} {e}`;
+    // console.log(result);
+
+    // quiz 4.2
+    // let a = "1";
+    // let b = "2";
+    // let c = "plus";
+    // let d = "3";
+    // let e = "equals";
+
+    // let result = `${a} ${c} ${b} ${e} ${d}`;
+    // console.log(result);
+
+    // quiz 4.3
+    let str = `This is a very long text
+a very long text`;
+    console.log(str);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 새로운 문자열 메소드
+
+    // 1. startsWith()
+    // ()괄호 안에 전달한 값으로 문자열이 시작하는지 확인
+    const code = 'ABCDEFG';
+    console.log(code.startsWith('ABB')); // ABB로 시작하냐? 를 물음 --> ABC로 시작하기 때문에 false 반환
+    console.log(code.startsWith('abc')); // false 대소문자 구분함  
+    console.log(code.startsWith('ABC')); // true
+    console.log(code.startsWith('DEF', 3)); // true 검사 시작 인덱스 지정
+
+    // 2. endsWith()
+    // 전달한 값으로 문자열이 끝나는 지 확인
+    console.log(code.endsWith('DDD')); //
+    console.log(code.endsWith('efg')); // false 대소문자 구분함  
+    console.log(code.endsWith('EFG')); // true
+    console.log(code.endsWith('EF', 6));  // 문자열의 얼마만큼만을 확인할 지 길이 지정
+    // 첫 6개 문자인 ABCDEF만을 고려, EF로 끝나므로 true 
+    console.log(code.endsWith('BC', 3));
+
+    // 3. includes()
+    // 전달한 값이 문자열에 포함되어 있는지 확인
+    console.log(code.includes('ABB')); 
+    console.log(code.includes('abc')); // 대문자 구분함
+    console.log(code.includes('CDE')); 
+
+    // 4. repeat()
+    // 문자열을 지정한 횟수 만큼 반복
+    const hello = 'Hi';
+    console.log(hello.repeat(10));
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

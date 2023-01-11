@@ -5,6 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .opening{
+      background-color: red;
+    }
+  </style>
   <script>
     // 화살표 함수
     // 화살표(=>)를 사용해서 함수를 선언하는 방법
@@ -85,15 +90,15 @@
     // );
 
 
-    const ask2 = (question, yes, no) => {
-      if (confirm(question)) yes();
-      else no();
-    };
+    // const ask2 = (question, yes, no) => {
+    //   if (confirm(question)) yes();
+    //   else no();
+    // };
 
-    ask2('동의하십니까?', 
-      () => alert('동의하셨습니다.'),
-      () => alert('취소버튼을 누르셨습니다.')
-    );
+    // ask2('동의하십니까?', 
+    //   () => alert('동의하셨습니다.'),
+    //   () => alert('취소버튼을 누르셨습니다.')
+    // );
 
 
     // Quiz3
@@ -114,12 +119,105 @@
     console.log(member2);
 
 
+    // 2023-01-11 // TODO : 복습
+    // 화살표 함수와 this 키워드
+    // 화살표 함수 내부에서 this 키워드는
+    // - 일반 함수와 다르게 동작하므로 주의
+    // - 상위 스코프에서 상속됨
+    // 아래 * 와 같은 경우에 유용하게 사용
+
+    console.log(this); // 전역 스코프에서 this는 window객체를 가리킴(실행 환경 = 브라우저)
+    
+    // 화살표 함수를 피해야 하는 경우
+    //아래 **와 같은 경우에 주의해서 사용
+
+
+    // arguments 객체에 대한 접근방식
+    // arguments 유사 객체 함수
+    function example() {
+      console.log(arguments[0]);
+    }
+    example(1, 2, 3);
+
+    const showWinner = () => {
+      const winner = arguments[0];  // 화살표 함수에서 argument 객체를 사용할 수 없다
+      console.log(`${winner} was the winner`);
+    };
+    // showWinner('goni', 'lee', 'Minro');
+
+    // 화살표함수에 전달된 모든 인수에 접근하려면...?
+    // Rest Parameter 사용
+    const showWinners = (...args) => {   // ...(나머지 parameter) 나머지 parameter로 인자값을 모두 가져올 수 있다 
+      const winner = args[0];  
+      console.log(`${winner} was the winner`);
+    };
+    showWinners('goni', 'lee', 'Minro');
+
+
+
 
 
 
   </script>
 </head>
 <body>
-  
+  <!-- TODO : 복습 -->
+  <!-- * -->
+  <div class="box open">
+    This is a box
+  </div>
+
+  <!-- ** -->
+  <button type="button" class="btn">click</button>
+
+  <script>
+    // 2023-01-11 // TODO : 복습
+    // *
+    // const box = document.querySelector('.box');
+    // box.addEventListener('click', function () {
+    //   this.classList.toggle('opening');  // class에 opening이 없으면 opening을 넣어주고, 있으면 opening 클래스를 삭제해주고
+    
+
+    // setTimeout(function () {  // window.setTimeout()에서 window가 생략됨
+    //   console.log(this); // this = window를 가르킴
+    //   this.classList.toggle('opening'); 
+    // }, 500);
+
+    // 해결방법
+    // setTimeout(() => {  
+    //   console.log(this); // box 객체, 상위 스코프에서 상속됨 // this대신 box를 쓰면 위 함수에서 문제 안됨
+    //   this.classList.toggle('opening'); 
+    // }, 500);
+    // });
+
+
+
+    // **
+    // const button = document.querySelector('.btn');
+    // button.addEventListener('click', () => {
+    //   this.classList.toggle('on');    // 오류 : 여기서 this는 상위 스코프인 window 객체를 가르킴
+    // });
+
+    // const person1 = {
+    //   age: 10,
+    //   grow: function () {
+    //     this.age++;
+    //     console.log(this.age);
+    //   }
+    // };
+    // person1.grow();
+
+    // const person2 = {
+    //   age: 10,
+    //   grow: () => {    // 화살표 함수에서 this는 상위 스코프, 즉 window 객체를 가르키고 window에 age라는 속성값이 없으니 undefined로 나옴
+    //     this.age++;  // undefined++;
+    //     console.log(this.age); // NaN
+    //   }
+    // };
+    // person2.grow();
+    
+
+
+  </script>
 </body>
 </html>
