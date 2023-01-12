@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- TODO : * -->
+  <!-- <h2>입력한 값보다 나이가 많은 사람 찾기</h2> -->
+  <!--<input type="number" id="ageTocheck" value="30">--> <!-- 기본값(value) = 30 -->
+  <!-- <button type="button" onclick="searchFunc()">Test</button> -->
+
+  <!-- TODO : ** -->
+  <!-- <div class="fruits">
+    <p>Apple</p>
+    <p>Banana</p>
+    <p>Orange</p>
+  </div> -->
+
+  <!-- TODO : *** -->
+  <!-- <input type="file" multiple> -->
+
+  <script>
+    // TODO
+    // array.map()
+    // const numbers = [29, 30, 31];
+    // const newNums = numbers.map(function (num, index) {
+    //   return num * 10 + index;
+    // });
+    // console.log(newNums);   // [290, 301, 312];
+
+    // const newNums2 = numbers.map(num => (num * 10));
+    // console.log(newNums2);   // [290, 300, 310];
+
+
+    // TODO
+    // const person = [
+    //   { firstname: 'lee', lastname: 'hoeeun'},
+    //   { firstname: 'Ro', lastname: 'Min'},
+    //   { firstname: 'Ro', lastname: 'Doughnut'}
+    // ];
+
+    // const newPerson = person.map(function (name) {
+    //   return `${name.firstname} ${name.lastname}`
+    // });
+    // console.log(newPerson);
+
+    // const newPerson2 = person.map((name) => (`${name.firstname} ${name.lastname}`));
+    // console.log(newPerson2);
+
+
+    // TODO
+    // array.filter()
+    // const ages = ['60', '29', '32', '30', '34'];
+    // const newAges = ages.filter(function (age) {
+    //   return age > 30;
+    // });
+    // console.log(newAges);
+
+    // const students = [
+    //   { name: 'lee', age: 29},
+    //   { name: 'you', age: 60},
+    //   { name: 'sol', age: 32},
+    //   { name: 'jun', age: 35},
+    //   { name: 'su', age: 18}
+    // ];
+    // const searchFunc = () => {
+    //   const oldStudent = students.filter(student => {
+    //   const ageTocheckNum = document.querySelector('#ageTocheck').value;
+    //   return student.age > ageTocheckNum;
+    // })
+    // console.log(oldStudent);
+    // }
+
+
+    // TODO
+    // Array.from(object);
+    // const strArr = Array.from('Imissyou');
+    // console.log(strArr);
+
+    // TODO : **
+    // Array.map()이랑 Array.from()을 이용하여 배열 만들기
+    // const fruits = document.querySelectorAll('.fruits p');
+    // console.log(fruits);  // NodeList(3) [p, p, p]
+    // const fruitsArray = Array.from(fruits)
+    // console.log(fruitsArray);  // Array(3) [p, p, p]
+    // const fruitNames = fruitsArray.map(function (fruit) {
+    //   return fruit.textContent;
+    // });
+    // console.log(fruitNames);  // Array(3) ['Apple', 'Banana', 'Orange']
+
+    // // Array.from()만 이용하여 배열 만들기
+    // const newFruitsArray = Array.from(fruits, fruit => fruit.textContent);
+    // console.log(newFruitsArray);
+
+
+    // TODO : ***
+    // const imgFileExt = ['jpg', 'png', 'gif'];
+    // let fileExt;
+    // const fileInput = document.querySelector('input[type=file]');
+    // fileInput.addEventListener('change', function () {
+    //   console.log(fileInput);
+    //   console.log(fileInput.files);
+    //   const filesss = fileInput.files;
+    //   const filesList = Array.from(filesss, file => file.name);
+    //   console.log(filesList);
+
+    //   console.log(fileInput.files[0]);
+    // });
+
+
+    
+    // Array.of(가변 인자)
+    // const digit = Array.of(1,2,3,4,'lee');
+    // console.log(digit);
+
+    // array.find
+    // const numbers = [1, 2, 3, 4, 5];
+    // const find = numbers.find((num) => {
+    //   return num > 2;
+    // });
+    // console.log(find);
+
+    // const find2 = numbers.find(num=> num >= 4);
+    // console.log(find2);
+
+
+    // array.findIndex()
+    // const greetings = ['Hello', 'hi', 'byebye', 'goodebye', 'hi'];
+    // const foundIndex = greetings.findIndex((params) => (params === 'byebye'));
+    // console.log(foundIndex);  // index 2
+    // const foundIndex2 = greetings.findIndex((params) => (params === 'Doughnut'));
+    // console.log(foundIndex2);  // -1 
+
+
+
+
+  </script>
+  
+</body>
+</html>
