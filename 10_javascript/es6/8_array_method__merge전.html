@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+  <!-- * TODO : 묶기(1) -->
+  <h2>입력한 값보다 나이가 많은 사람 찾기</h2>
+  <input type="number" id="ageTocheck" value="30"> <!-- 기본값(value) = 30 -->
+  <button type="button" onclick="searchFunc()">Test</button>
+
+  <!-- ** TODO : 묶기(2)-->
+  <div class="fruits">
+    <p>Apple</p>
+    <p>Banana</p>
+    <p>Orange</p>
+  </div>
+
+
+  <script>
+    // 유용한 배열 메소드(ES5)
+
+    // 1. array.map(function (currentValue, index))   //* currentValue : 현재값
+    // 기존 배열의 요소를 이용하여 새로운 배열을 만듦
+    // 기존 배열의 각 요소에 대해 한 번씩 함수를 호출하고 반환하는 값으로 새로운 배열을 만듦
+    // 원래 배열을 변경하지 않음
+
+    // 배열의 모든 값에 10을 곱한 새 배열 만들기
+    // TODO : 복습 2023-01-12
+    // const numbers = [65, 44, 12, 4];
+    // numbers.map(function (currentValue, index) {  // 인자값으로 함수를 넣으면 '콜백함수'라 함
+      
+    // });
+
+    // const newNumber = numbers.map((num) => { 
+    //   return num * 10;
+    // });
+    // console.log(newNumber);
+
+    // const newNumber2 = numbers.map((num, index) => {  // index가 필요하면 쓰고, 안필요하면 안쓰고
+    //   index++;
+    //   return num * 10;
+    // });
+    // console.log(newNumber2);
+
+
+    // 각 사람의 전체 이름을 가진 새 배열 만들기
+    // const person = [
+    //   { firstname: 'lee', lastname: 'hoeeun' },
+    //   { firstname: 'park', lastname: 'jimin' },
+    //   { firstname: 'ro', lastname: 'min' },
+    // ];
+
+    // const newPerson = person.map((item) => {
+    //   // return [item.firstname, item.lastname].join(' ');  // lee hoeeun, park jimin, romin
+    //   return `${item.firstname}${item.lastname}`;
+    // });
+    // console.log(newPerson);
+
+
+
+    // 2. array.filter(function (currentValue, index) {
+    // }); 메소드
+    // 제공된 테스트 함수를 통과하는 요소로 채워진 새 배열을 만듦
+    // 원래 배열을 변경하지 않음
+    // ages 배열에서 19세 이상인 모든 값들로 새 배열을 만들어 반환
+    // const ages = [32, 33, 16, 40];
+    // const newAges = ages.filter((age) => {
+    //   return age >= 19;   // true인 요소들만 새로운 배열(newAges)에 추가(push) 해줌 
+    // });
+    // console.log(newAges);
+
+    // 활용Tip: 검색기능 (또는 필터링 기능) 만들 때 유용 (ex) 카테고리 별로 따로 보이게 하고 싶을 때
+    // TODO : 묶기(1)
+    // const students = [
+    //   { name: 'leehoe', age: '29' },
+    //   { name: 'MinRo', age: '30' },
+    //   { name: 'jimin', age: '20' },
+    //   { name: 'sol', age: '19' },
+    //   { name: 'jun', age: '17' },
+    // ];
+    // const searchFunc = () => {
+    //   const searchStudent = students.filter((student) => {
+    //     const ageTocheckValue = document.querySelector('#ageTocheck').value;
+    //     return student.age > ageTocheckValue;
+    //   });
+    //   console.log(searchStudent);
+    // };
+
+    // // 구조분해 할당 사용
+    // // ({ age })를 쓰면 좋은 점: 구조분해 할당 적용 시, 지금 이 함수에서 필요한 데이터가 무엇인지 매개변수만 보고 명시적으로 알 수 있다.
+    // const searchFunc2 = () => {
+    //   const searchStudent = students.filter(({ age }) => {
+    //     const ageTocheckValue = document.querySelector('#ageTocheck').value;
+    //     return age > ageTocheckValue;
+    //   });
+    //   console.log(searchStudent);
+    // };
+
+
+
+
+    // 새로운 배열 메소드(ES6)
+    
+    // 1. Array.from(object)
+    // 배열스러운, 배열처럼 보이지만, 배열이 아닌 객체를 받아서 실제 배열로 변환해 반환
+    // 변환할 수 없으면 빈 배열을 반환
+    // 예: 인덱스와 길이 속성(lenth)이 있는 객체나 반복 가능한 객체
+
+    // 1) 문자열에서 배열 만들기
+    const strArray = Array.from('ABCDEFG');
+    console.log(strArray);
+
+    // 2-1) NodeList에서 배열 만들기
+    // **참조
+    const fruits = document.querySelectorAll('.fruits p');
+    console.log(fruits);
+
+    // fruits를 실제 배열로 변환
+    const fruitsArray = Array.from(fruits);
+    console.log(fruitsArray);
+
+    // 배열로 변환 후 map() 사용 가능
+    const fruitNames = fruitsArray.map(fruit => fruit.textContent);  // p태그의 textContent를 가져와서 새로운 배열(fruitNames)로 배열로 저장함
+    console.log(fruitNames);
+
+
+    // 2-2) Array.from(object, mapFunction) 두번째 인수를 이용
+    const fruitsArrayNames = Array.from(fruits, fruit => fruit.textContent);
+    console.log(fruitsArrayNames);
+
+    const fruitsArrayNames2 = Array.from(fruits, (fruit) => {
+      return fruit.textContent
+    });
+    console.log(fruitsArrayNames2);
+
+
+    // 3) FileList에서 배열 만들기
+    // 4_2_4_quiz5.html로 이동해서 실습
+
+
+    // 2. Array.of(가변 인자)
+    // 전달 받은 모든 인수로 배열을 생성
+    const digit = Array.of(1, 2, 3, 4, 5);
+    console.log(digit);
+
+    // 3. (ES6에서 가장 많이 쓰임!!) Array.find(function (currentValue, index))
+    // 제공된 테스트 함수를 충족하는 배열의 첫번째 요소를 반환
+    // 충족하는 요소가 없으면 undefined를 반환
+    // 원래 배열을 변경하지 않음
+    // 유니크한(예: id값) 특정 요소를 찾을 때 유용
+    const array = [1, 2, 3, 4, 5];
+
+    const find = array.find(e => e > 3);    // 4  -- array 배열 데이터에서 e > 3 조건을 충족하는 첫번째 요소를 반환
+    console.log(find); // 4
+    console.log(array.find(e => e > 10));  // 충족되는 요소가 없으면 undefined를 반환
+
+
+    // 4. (ES6에서 가장 많이 쓰임!!)Array.findIndex(function (currentValue, index))
+    // 제공된 테스트 함수를 충족하는 배열의 첫번째 요소의 인덱스를 반환
+    // 일치하는 항목이 없으면 -1을 반환
+    // 원래 배열을 변경하지 않음
+    const greetings = ['Hello', 'hi', 'byebye', 'goodebye', 'hi'];
+    const foundIndex = greetings.findIndex(e => e === 'hi');
+    console.log(foundIndex);   // 1  있을 경우
+    console.log(greetings.findIndex(e => e === 'hey'));  // -1 없을 경우
+
+
+    // Array.some()과 같은 Array.every()
+    // .some()은 조건과 일치하는 요소가 있는지 검색하고 첫번째 일치하는 요소를 찾으면 바로 중지
+    // .every()는 모든 요소가 주어진 조건과 일치하는지 여부를 확인
+    // 원래 배열을 변경하지 않음
+    const numArray = [1, 2, 3, 4, 5, 6, 1, 2, 3, 1];
+    const arraySome = numArray.some(e => e > 2);
+    console.log(arraySome);
+    
+    const arrayEvery = numArray.every(e => e > 2);
+    console.log(arrayEvery);
+    console.log(numArray.every(e => e >= 1));
+
+    // (참고)
+    // array.map();   - instance 메소드 : 객체를 생성한 다음에 쓸 수 있는 메소드
+    // array.filter();  - instance 메소드 
+    // Array.from(); - 정적 메소드(static property) : 객체를 생성하지 않아도 사용할 수 있는 메소드
+    // Array.of();   - 정적 메소드
+
+
+    // Quiz
+    // 8.1
+    const apple = 'Apple';
+    const myArr = Array.from(apple);
+    console.log(myArr);
+
+    // 8.2
+    const array2 = [1, 2, 3, 4, 5];
+    let found = array.find(e => e > 3);
+    console.log(found);  // 4
+
+    // 8.3
+    const array3 = [1, 2, 3, 4, 5, 6, 1, 2, 3, 1];
+    let arraySome2 = array.some(e => e > 2);
+    console.log(arraySome2);  // true
+
+    // 8.4
+    const calcul = Array.from([1, 2, 3], x => x * x);  // [1, 4, 9]
+    console.log(calcul);
+
+    const calcul2 = Array.from([1, 2, 3], function(x) {
+    return x * x ;
+    });  // [1, 4, 9]
+
+
+
+
+  </script>
+</body>
+</html>
