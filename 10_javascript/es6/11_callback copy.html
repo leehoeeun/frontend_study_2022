@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+    console.log(1);
+    setTimeout(() => {    
+      console.log(2);
+    }, 1000);
+    console.log(3);
+
+    // 비동기 통신의 예 = fetch()
+ 
+    const date = fetch('api-url');
+    console.log('finished');  
+    console.log(date);
+
+
+    // 콜백 예1: 계산기 기능과 디스플레이 기능
+    function myDisplayer(some) {
+      document.write(some, '<br>');    // 3) 1,2번이 끝난 다음 3번이 실행됨
+    }
+
+    function myCalculator(num1, num2, myCallback) {
+      const sum = num1 + num2;   
+      myCallback(sum);   
+    }
+    myCalculator(5, 10, myDisplayer);
+  
+    // 콜백 예2: 배열에서 양수만 뽑아 새로운 배열 생성
+
+    const myNumber = [4, 1, -20, -7, 5, 9, -6];
+    
+    function  removeNeg(numbers, callback) { 
+      const myArray = [];  
+      for (const x of numbers) {
+        if (callback(x)) {
+          myArray.push(x);
+        }
+      }
+      return myArray;
+    }
+
+    const posNumbers = removeNeg(myNumber, (x) => (x >= 0));       
+    document.write(posNumbers, '<br>');
+  
+
+
+
+    // 콜백 예3:
+    function myMessage1() {
+      document.getElementById('demo1').innerHTML= 'I love you !!';
+    }
+    setTimeout(myMessage1, 3000);
+
+
+    function myMessage2(value) {
+      document.getElementById('demo2').innerHTML= value;
+    }
+    setTimeout(function () {
+      myMessage2('I hate you !!');
+    }, 3000);
+
+
+    // 콜백 예4:
+    setInterval(() => {
+      let d = new Date();
+      document.getElementById('demo3').innerHTML = 
+        d.getHours() + ':' +
+        d.getMinutes() + ':' +
+        d.getSeconds();
+    }, 1000);
+
+    // 1-2. 콜백 지옥(Callback Hell)
+
+    // 콜백지옥의 예1: strp1~step5까지 함수는 비동기적으로 동작함을 가정
+    function step1(value, callback) {
+      // 실행코드들1
+      const 결과1 = '데이터1';
+      callback(결과1);
+    }   
+    function step2(value, callback) {
+      // 실행코드들2
+      const 결과2 = '데이터2';
+      callback(결과2);
+    }  
+    function step3(value, callback) {
+      // 실행코드들3
+      const 결과3 = '데이터3';
+      callback(결과3);
+    }
+    function step4(value, callback) {
+      // 실행코드들4
+      const 결과4 = '데이터4';
+      callback(결과4);
+    }
+    function step5(value, callback) {
+      // 실행코드들5
+      const 결과5 = '데이터5';
+      callback(결과5);
+    }
+
+    step1('init', function (value1) {
+      step2(value1, function (value2) {
+        step3(value2, function (valu3) {
+          step4(valu3, function (value4) {
+            step5(value4, function (value5) {
+              // value5를 이용한 작업
+              // console.log(value5);
+            })
+          })
+        })
+      })
+    });
+
+    // 콜백 지옥의 예2
+    const loginUser = (id, password, onSuccess, onError) => {
+      setTimeout(() => {
+        if(id === 'goni' && password === '1234') {
+          onSuccess(id);
+        }else{
+        }
+      }, 2000);
+    };
+    const getRoles = (userId, onSuccess, onError) => {
+      setTimeout(() => {
+        if(userId === 'goni') {
+          onSuccess({ name: 'leehoeeun', role: 'admin' });
+        }else{
+          onError(new Error('접근 권한이 없음'));
+        }
+      }, 1000);
+    };
+
+    const id = prompt('아이디를 입력하세요.');
+    const password = prompt('비밀번호를 입력하세요.');
+    loginUser(id, password, userId => {
+      getRoles(userId, userInfo => {
+        alert(`Welcome ${userInfo.name} (${userInfo.role})`);
+      }, error => {
+      console.error(error);
+      });
+    }, error => {
+      console.error(error);
+    });
+    
+  </script>
+</head>
+<body>
+  <h1 id="demo1"></h1>
+  <h1 id="demo2"></h1>
+  <h1 id="demo3"></h1>
+</body>
+</html>
