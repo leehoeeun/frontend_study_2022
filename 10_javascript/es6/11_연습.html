@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+
+  const myNumber = [4, 1, -20, -7, 5, 9, -6];
+    
+  function  removeNeg(numbers, callback) {
+    const myArray = [];  
+    for (const x of numbers) {
+      if (callback(x)) {
+        myArray.push(x);
+      }
+    }
+    return myArray;
+  }
+
+  const posNumbers = removeNeg(myNumber, (x) => (x >= 0));
+  document.write(posNumbers, '<br>');
+
+  const minusNumber = removeNeg(myNumber, (x) => (x <= 0));
+document.write(minusNumber, '<br>');
+
+const loginUser = (id, password, onSuccess, onError) => {
+  setTimeout(() => {
+    if(id === 'goni' && password === '1234') {onSuccess(id);}
+    else{onError(new Error('존재하지 않음'));}
+  }, 2000);
+};
+
+const getRoles = (userId, onSuccess, onError) => {
+  setTimeout(() => {
+    if(userId === 'goni') {onSuccess({ name: 'leehoeeun', role: 'admin' });}
+    else{ onError(new Error('접근 권한이 없음')); }
+  }, 1000);
+};
+
+  const id = prompt('아이디를 입력하세요.');
+  const password = prompt('비밀번호를 입력하세요.');
+
+
+  loginUser(id, password, userId => {
+    getRoles(userId, userInfo => {
+      alert('성공!');
+    }, error => {
+      console.log(error);
+    });
+  }, error => {
+    console.error(error);
+  });
+
+
+</script>
+<body>
+  
+</body>
+</html>

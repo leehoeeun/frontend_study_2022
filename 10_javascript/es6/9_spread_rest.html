@@ -50,8 +50,8 @@
     // TODO :  오타 있는 거 같아!!! 선생님거랑 내용 확인 바람
     // 3) 함수와 수프레드 암산자
     // 인수들을 요소로 가지는 배열에 스프레드 연산자를 사용하면 함수를 쉽게 호출 가능
-    function doStuff(rams) {
-      // console.log(x + y + 9 + z);
+    function doStuff(x,y,z) {
+      console.log(x + y + 9 + z);
     };
     const arge = [0, 1, 2]
 
@@ -62,7 +62,7 @@
     // 다른 예
     const name = ['Goni', 'Kim'];
     function greet(first, last) {
-      // console.log(`hello ${firsrt} ${last}`);
+      console.log(`hello ${first} ${last}`);
     }
     greet(...name);  // 배열의 두 요소 값은 매개변수에 자동으로 할당
 
@@ -88,7 +88,7 @@
     const clone = {...person};
     console.log(clone);
 
-    clone.age = 15;
+    clone.age = 18;
     console.log(clone);
     console.log(person);
 

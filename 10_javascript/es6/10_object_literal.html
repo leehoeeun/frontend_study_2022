@@ -83,6 +83,8 @@
     const person6 = {};   // 빈 객체를 생성
     person6[name] = 'Goni';   // 객체를 업데이트  (객체에 속성을 추가)
     console.log(person6.myname);
+    console.log(person6);
+
 
     // ES6
     // 객체 생성과 동시에 동적으로 속성 정의 가능
@@ -91,7 +93,9 @@
     };
     console.log(name);
     console.log(person7[name]);
-    console.log(person7.myName);
+    console.log(person7.myName);     // TODO: (질문) undefined 나오는데, 객체에 키값에 접근하면 해당 키값의 value값(Goni)이 나와야 하는 거 아닌가요?
+    console.log(person7);
+
 
     // QUIZ
     // 10.1
