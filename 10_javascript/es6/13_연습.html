@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // function fetchDate() {
+    //   return new Promise((resolve, reject) => {
+    //     resolve('네가 원하는 데이터');
+    //   });
+    // }
+    // fetchDate()
+    //   .then(res => { 
+    //     console.log(res); 
+    //   });
+
+    // async function fetchDate() {
+    //   return '네가 원하는 데이터';
+    // }
+    // fetchDate()
+    //   .then(res => { 
+    //     console.log(res); 
+    //   });
+
+    // async function walk(amount) {
+    //   return new Promise((resolve, reject) => {
+    //     if(amount < 500) {
+    //       reject('the value is too small');
+    //     }
+    //     setTimeout(() => {
+    //       resolve(`너는 ${amount}ms만큼 걸었어!`);
+    //     }, amount);
+    //   });
+    // }
+    // TODO : 주석 풀기
+    // walk(5000).then(res => {
+    //   console.log(res);   //
+    //   return walk(3000);   // walk()함수를 3초 뒤에 다시 호출
+    // }).then(res => {      
+    //   console.log(res);
+    //   return walk(1000);
+    // }).then(res => {
+    //   console.log(res);   // reject에서 에러 처리 안해서 끝나는 건데 error 처리 하면 아래도 잘 나오게 할 수 있음!!
+    //   return walk(100);
+    // }).then(res => {
+    //   console.log(res);
+    //   return walk(500);
+    // });
+
+    // async function go() {
+    //   const res = await walk(3000);
+    //   console.log(res);
+    //   const res2 = await walk(500);
+    //   console.log(res2);
+    //   const res3 = await walk(1000);
+    //   console.log(res3);
+    //   const res4 = await walk(200);
+    //   console.log(res4);
+    //   const res5 = await walk(500);
+    //   console.log(res5);
+    // }
+    // go();
+
+    // fetch('https://api.github.com/users/leehoeeun')
+    //   .then((res) => {
+    //     console.log(res);
+    //     return res.json();        // TODO: 질문   .json() ??? 무슴 용도인가(검색해봐)
+    //   })
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => {
+    //     console.error(err);
+    //   });
+
+    // const githubUser = async user => {
+    //   const res = await fetch(`https://api.github.com/users/${user}`);
+    //   const userInfo = await res.json();
+    //   console.log(userInfo);
+    // };
+    // githubUser('leehoeeun');
+
+// ----------------------------------------------------------------------------
+    // const loginUser = (id, password) => {
+    //   // 프로미스 객체를 만들어서 반환하고 then을 붙인다
+    //   return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //       debugger;
+    //     if(id === 'goni' && password === '1234') {
+    //       resolve(id);   
+    //     }else{
+    //       reject(new Error('존재하지 않음, loginUser'));
+    //     }
+    //   }, 2000);
+    //   });
+    // };
+
+    // const getRoles = (userId) => {
+    //   return new Promise((resolve, reject) => {
+    //     debugger;
+    //     setTimeout(() => {
+    //     if(userId === 'goni') {
+    //       resolve({ name: 'leehoeeun', role: 'admin' });
+    //     }else{
+    //       reject(new Error('접근 권한이 없음, getRoles'));         // userId === 'goni' 에서 goni값을 변경해야 나옴
+    //     }
+    //   }, 1000);
+    //   })
+    // };
+
+    // const id = prompt('아이디를 입력하세요.');
+    // const password = prompt('비밀번호를 입력하세요.');
+
+      // const userInfo = async userId => {
+      //   debugger;
+      //   const testText = await loginUser(id, password);
+      //   const user1 = await getRoles(testText);
+      //   const user2 = await alert(`Welcome ${user1.name} (${user1.role})`);  
+      //   console.log(testText);
+      //   console.log(user1);
+      //   console.log(user2);
+      // }
+      // userInfo(id, password);
+// ----------------------------------------------------------------------------
+
+    // const githubUser = async username => {
+    //   const userInfo = await fetch(`https://api.github.com/users/${username}`);
+    //   const res = await userInfo.json();
+    //   console.log(res);
+    // };
+    // githubUser('leehoeeun');
+
+    async function asyncFunc() {
+      try {
+        const response = await fetch('api-url');
+        console.log(response);
+        if(!response.ok) {
+          throw new Error(`${response.status} (${response.statusText}) 뇸뇸`);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    asyncFunc();
+
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

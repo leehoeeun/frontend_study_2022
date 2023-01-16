@@ -18,6 +18,7 @@
 
     // 비동기 함수 만들어 보기 예제
     // 일반적인 함수
+    // TODO: 주석 풀기
     // function fetchData() {
     //   // 네트워크 요청을 통해 시간이 걸리는 작업...
     //   return new Promise((resolve, reject) => {
@@ -29,7 +30,8 @@
     //     console.log(res);
     //   });
 
-    // //비동기 함수를 만들기 위해 함수 앞에 async 키워드를 붙이면 자동으로 프로미스로 반환됨 
+    // 비동기 함수를 만들기 위해 함수 앞에 async 키워드를 붙이면 자동으로 프로미스로 반환됨 
+    // TODO: 주석 풀기
     // async function fetchData2() {
     //   return 'async 네가 원하는 데이터';
     // }
@@ -40,54 +42,54 @@
 
     // // 3-1) 프로미스를 사용하는 일반적인 방식과 async / await로 리팩터링 하기
     // // 예제1
-    // function walk(amount) {
-    //   return new Promise((resolve, reject) => {
-    //     if(amount < 500) {
-    //       reject('the value is too small');
-    //     }
-    //     setTimeout(() => {
-    //       resolve(`너는 ${amount}ms만큼 걸었어!`);
-    //     }, amount);
-    //   });
+    function walk(amount) {
+      return new Promise((resolve, reject) => {
+        if(amount < 500) {
+          reject('the value is too small');
+        }
+        setTimeout(() => {
+          resolve(`너는 ${amount}ms만큼 걸었어!`);
+        }, amount);
+      });
+    }
+    // TODO : 주석 풀기
+    walk(5000).then(res => {
+      console.log(res);   //
+      return walk(3000);   // walk()함수를 3초 뒤에 다시 호출
+    }).then(res => {      
+      console.log(res);
+      return walk(1000);
+    }).then(res => {
+      console.log(res);   // reject에서 에러 처리 안해서 끝나는 건데 error 처리 하면 아래도 잘 나오게 할 수 있음!!
+      return walk(100);
+    }).then(res => {
+      console.log(res);
+      return walk(500);
+    });
+
+
+    // 예제1 리팩터링
+    // TODO : 주석 풀기
+    // async function go() {
+    //   // 프로미스가 완료될 때까지 기다리기 위해 await 키워드를 사용
+    //   // await를 쓰면 우리가 평상 시 코딩하는 것처럼 동기적 코드로 보임(가독성)
+    //   const res = await walk(500);  // 0.5초 기다렸다가 결과 값을 res에 넣고 출력함(74번줄에 출력)
+    //   console.log(res);
+    //   const res2 = await walk(900); 
+    //   console.log(res2);
+    //   const res3 = await walk(600); 
+    //   console.log(res3);
+    //   const res4 = await walk(400); 
+    //   console.log(res4);
+    //   const res5 = await walk(500); 
+    //   console.log(res5);
     // }
-    // // TODO : 주석 풀기
-    // // walk(5000).then(res => {
-    // //   console.log(res);   //
-    // //   return walk(3000);   // walk()함수를 3초 뒤에 다시 호출
-    // // }).then(res => {      
-    // //   console.log(res);
-    // //   return walk(1000);
-    // // }).then(res => {
-    // //   console.log(res);   // reject에서 에러 처리 안해서 끝나는 건데 error 처리 하면 아래도 잘 나오게 할 수 있음!!
-    // //   return walk(100);
-    // // }).then(res => {
-    // //   console.log(res);
-    // //   return walk(500);
-    // // });
-
-
-    // // 예제1 리팩터링
-    // // TODO : 주석 풀기
-    // // async function go() {
-    // //   // 프로미스가 완료될 때까지 기다리기 위해 await 키워드를 사용
-    // //   // await를 쓰면 우리가 평상 시 코딩하는 것처럼 동기적 코드로 보임(가독성)
-    // //   const res = await walk(500);  // 0.5초 기다렸다가 결과 값을 res에 넣고 출력함(74번줄에 출력)
-    // //   console.log(res);
-    // //   const res2 = await walk(900); 
-    // //   console.log(res2);
-    // //   const res3 = await walk(600); 
-    // //   console.log(res3);
-    // //   const res4 = await walk(400); 
-    // //   console.log(res4);
-    // //   const res5 = await walk(500); 
-    // //   console.log(res5);
-    // // }
-    // // go();
-    // // await는 비동기 함수 내에서만 사용 가능!!
+    // go();
+    // await는 비동기 함수 내에서만 사용 가능!!
 
 
     // // 예제2
-    // // 깃허브 API로 특정 깃허브 사용자 정보 조회
+    // 깃허브 API로 특정 깃허브 사용자 정보 조회
     // fetch('https://api.github.com/users/leehoeeun')
     //   .then(res => {
     //     console.log(res);
@@ -102,8 +104,8 @@
     //     console.error(err);
     //   });
 
-    //   // 예제2 리팩터링
-    //   const getGithubInfo = async username => {          // 화살표 함수가 아닌 일반 함수일 때는 async function(username){};
+    // // 예제2 리팩터링
+    // const getGithubInfo = async username => {          // 화살표 함수가 아닌 일반 함수일 때는 async function(username){};
     //     const res = await fetch(`https://api.github.com/users/${username}`);
     //     const userInfo = await res.json();
     //     console.log(userInfo);
@@ -112,10 +114,10 @@
 
 
 
-    // // 3-2) 오류 처리
-    // // 일반적인 프로미스에서는 catch()를 사용하여 프로미스가 반환하는 오류들을 처리
-    // // async / await도 비슷 - try / catch 구문 사용
-    // // try에 다양한 오류가 발생한 애를 catch에서 잡아줌, 단, 오류가 다중 발생할 시 그중 첫번째만 찍힘. 하나씩 수정해 나가면 됨
+    // 3-2) 오류 처리
+    // 일반적인 프로미스에서는 catch()를 사용하여 프로미스가 반환하는 오류들을 처리
+    // async / await도 비슷 - try / catch 구문 사용
+    // try에 다양한 오류가 발생한 애를 catch에서 잡아줌, 단, 오류가 다중 발생할 시 그중 첫번째만 찍힘. 하나씩 수정해 나가면 됨
     // async function asyncFunc() {
     //   try {
     //     // 에러 발생 가능한 코드들을 여기에...
@@ -130,13 +132,13 @@
     // }
     // asyncFunc();
 
-    // // Quiz
-    // // 19.1
-    // async function func() {
-    //   let promise = Promise.resolve(1);
-    //   let result = await promise;
-    // }
-    // func();
+    // Quiz
+    // 19.1
+    async function func() {
+      let promise = Promise.resolve(1);
+      let result = await promise;
+    }
+    func();
 
 
 
@@ -167,16 +169,17 @@
 
     const id = prompt('아이디를 입력하세요.');
     const password = prompt('비밀번호를 입력하세요.');
-
-    async function loginUser2(id, password) {
-      const userId = await getRoles(userId);
-      console.log(userId);
-      const userInfo = await alert(`Welcome ${userInfo.name} (${userInfo.role})`); 
-      console.log(userInfo);
-      const err = console.error(err);
-      console.log(err);
-    }
-    // loginUser(id, password);
+    
+    const userInfo = async userId => {
+        debugger;
+        const testText = await loginUser(id, password);
+        const user1 = await getRoles(testText);
+        const user2 = await alert(`Welcome ${user1.name} (${user1.role})`);  
+        console.log(testText);
+        console.log(user1);
+        console.log(user2);
+      }
+      userInfo(id, password);
 
 
 

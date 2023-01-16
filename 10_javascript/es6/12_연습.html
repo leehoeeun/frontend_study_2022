@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+    // const trashPromise = new Promise((resolve, reject) => {
+    //   console.log('로딩중...');
+    //   const resultFlag = true;
+    //   setTimeout(() => {
+    //     if(resultFlag) {
+    //       resolve('수행 완료');
+    //     }else{
+    //       reject('에러 발생');
+    //     }
+    //   }, 1000);
+    // });
+    // // console.log(trashPromise);
+
+    // trashPromise
+    //   .then((data) => {
+    //     console.log(data);
+    //   })
+    //   .catch((err) => {
+    //     console.error(err);
+    //   });
+
+
+    // fetch('https://jsonplaceholder.typicode.com/posts')
+    //   .then((res) => {
+    //     console.log(res);
+    //     return res.json();
+    //   })
+    //   .then(data => {
+    //     console.log(data);
+    //   })
+
+    // const user5 = [
+    //   { name: 'goni', age: 33 },
+    //   { name: 'leehoe', age: 29 },
+    //   { name: 'Eun', age: 28 },
+    //   { name: 'Minro', age: 31 }
+    // ];
+
+
+    // console.log(user5);
+    // const jsonUsers = JSON.stringify(user5);
+    // console.log(jsonUsers);
+    // const objectUsers = JSON.parse(jsonUsers);
+    // console.log(objectUsers);
+
+    // const promiseChain = new Promise((resolve, reject) => {
+    //   resolve('성공!');
+    // });
+    // console.log(promiseChain);
+    // promiseChain
+    //   .then((data) => {
+    //     console.log(data);
+    //     return 'working...';
+    //   })
+    //   .then ((data1) => {
+    //     console.log(data1);
+    //     throw new Error('실패!');
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
+
+    const loginUser = (id, password) => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {        
+        if(id === 'goni' && password === '1234') {
+          resolve(id);
+        }else{
+          reject(new Error('존재하지 않음, loginUser'));
+        }
+      }, 2000);
+      });
+    };
+
+    const getRoles = (userId) => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+        if(userId === 'goni') {
+          resolve({ name: 'leehoeeun', role: 'admin' });
+        }else{
+          reject(new Error('접근 권한이 없음, getRoles'));
+        }
+      }, 1000);
+      });
+    };
+
+    const id = prompt('아이디를 입력하세요.');
+    const password = prompt('비밀번호를 입력하세요.');
+    loginUser(id, password)
+      .then(userId => {                       //1) 로그인이 성공하면 그러면
+        return getRoles(userId);              // 2) userId 값을 통해 권한 정보를 얻는 getRoles() 호출
+      })
+      .then(userInfo => {                     // 3) 권한 정보를 얻어오면 그러면 alert창 띄움
+        alert(`Welcome ${userInfo.name} (${userInfo.role})`);  
+      })
+      .catch(err => {                         // 4) 에러 핸들링
+        console.error(err);
+      });
+
+
+
+
+
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
