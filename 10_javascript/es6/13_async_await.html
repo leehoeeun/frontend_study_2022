@@ -118,19 +118,19 @@
     // 일반적인 프로미스에서는 catch()를 사용하여 프로미스가 반환하는 오류들을 처리
     // async / await도 비슷 - try / catch 구문 사용
     // try에 다양한 오류가 발생한 애를 catch에서 잡아줌, 단, 오류가 다중 발생할 시 그중 첫번째만 찍힘. 하나씩 수정해 나가면 됨
-    // async function asyncFunc() {
-    //   try {
-    //     // 에러 발생 가능한 코드들을 여기에...
-    //     const response = await fetch('api-url');
-    //     console.log(response);    // Response 객체, status: 404 (Not found) , ok: false
-    //     if(!response.ok) {     // !response.ok = true
-    //       throw new Error(`${response.status} (${response.statusText})`);     // catch에서 error를 잡을 수 있도록 오류 내용을 던짐(throw) - throw는 선택사항/근데 난 쓸래!
-    //     }
-    //   } catch (err) {       //  try에서 error가 발생했을 때 바로 catch문으로 간다
-    //     console.error(err);
-    //   }
-    // }
-    // asyncFunc();
+    async function asyncFunc() {
+      try {
+        // 에러 발생 가능한 코드들을 여기에...
+        const response = await fetch('api-url');
+        console.log(response);    // Response 객체, status: 404 (Not found) , ok: false
+        if(!response.ok) {     // !response.ok = true
+          throw new Error(`${response.status} (${response.statusText})`);     // catch에서 error를 잡을 수 있도록 오류 내용을 던짐(throw) - fetch('api-url');에서 에러가 안나니까 일부로 에러를 만들어서 throw한 거임. 
+        }
+      } catch (err) {       //  try에서 error가 발생했을 때 바로 catch문으로 간다
+        console.error(err);
+      }
+    }
+    asyncFunc();
 
     // Quiz
     // 19.1
@@ -170,16 +170,29 @@
     const id = prompt('아이디를 입력하세요.');
     const password = prompt('비밀번호를 입력하세요.');
     
-    const userInfo = async userId => {
-        debugger;
-        const testText = await loginUser(id, password);
-        const user1 = await getRoles(testText);
-        const user2 = await alert(`Welcome ${user1.name} (${user1.role})`);  
-        console.log(testText);
-        console.log(user1);
-        console.log(user2);
+    // const userInfo = async userId => {
+    //     debugger;
+    //     const testText = await loginUser(id, password);
+    //     const user1 = await getRoles(testText);
+    //     const user2 = await alert(`Welcome ${user1.name} (${user1.role})`);   // 1회성이면 변수에 저장안해도 됨
+    //     console.log(testText);
+    //     console.log(user1);
+    //     console.log(user2);
+    //   }
+    // userInfo(id, password);
+
+    // 1. 가장 먼저 해야 될 것 : async 함수 만들기
+    // 2023-01-17 복습내용
+    const loginAndGetRoles = async () => {
+      try {
+        const userId = await loginUser(id, password);
+        const userInfo = await getRoles(userId);
+        alert(`Welcome ${user1.name} (${user1.role})`);
+      } catch (err) {
+        console.error(err);
       }
-      userInfo(id, password);
+    };
+    loginAndGetRoles(id, password);
 
 
 
