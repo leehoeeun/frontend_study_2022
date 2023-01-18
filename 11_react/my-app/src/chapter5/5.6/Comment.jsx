@@ -22,10 +22,12 @@ function Comment(props) {
   //     </div>
   //   </div>
   // );
+  console.log(props);
 
   return (
     <div className="comment">
-      <Userinfo user={props.author}/>
+      <Userinfo user={props.author}
+      />
       <div className="comment-text">
         {props.text}
       </div>

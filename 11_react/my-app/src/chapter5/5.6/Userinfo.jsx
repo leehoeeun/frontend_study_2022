@@ -1,6 +1,7 @@
 import Avatar from "./Avatar";
 
 function Userinfo(props) {
+  console.log(props);
   return (
     <div className="user-info">
     <Avatar user={props.user}/>

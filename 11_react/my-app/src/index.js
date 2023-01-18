@@ -36,7 +36,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
   // 5장 예제
   root.render(
-    <Comment />
+    <Comment 
+    author = "고니"
+    text ="안녕하세요. 고니입니다."
+    date ="2023.01.18"/>
   );
 
 // If you want to start measuring performance in your app, pass a function
