@@ -26,7 +26,8 @@ function Comment(props) {
 
   return (
     <div className="comment">
-      <Userinfo user={props.author}
+      <Userinfo 
+        user={props}
       />
       <div className="comment-text">
         {props.text}

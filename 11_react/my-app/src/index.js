@@ -29,17 +29,20 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // }, 1000);
 // 전체 UI를 다시 렌더링 하도록 만들었지만 React DOM은 내용이 변경된 텍스트 노드만 업데이트
 
-  // 5장 예제
+  // 5.3장 예제
   // root.render(
   //   <PropUse />
   // );
 
-  // 5장 예제
+  // 5.6장 예제
   root.render(
     <Comment 
     author = "고니"
+    name = "goni"
     text ="안녕하세요. 고니입니다."
-    date ="2023.01.18"/>
+    date ="2023.01.18"
+    avatarUrl = "http://via.placeholder.com/200x200"
+    />
   );
 
 // If you want to start measuring performance in your app, pass a function

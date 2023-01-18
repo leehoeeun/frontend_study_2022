@@ -1,6 +1,7 @@
 import Book from "./Book";
 
 function Library(props) {
+  console.log(props);
   return(
     <div>
       <Book name="모던 자바스크립트 딥 다이브" numOfPage={300}/>
