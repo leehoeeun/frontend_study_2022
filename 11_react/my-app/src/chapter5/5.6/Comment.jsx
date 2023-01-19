@@ -40,3 +40,32 @@ function Comment(props) {
 }
 
 export default Comment;
+
+
+// author = "고니"
+// name = "goni"
+// text ="안녕하세요. 고니입니다."
+// date ="2023.01.18"
+// avatarUrl = "http://via.placeholder.com/200x200"
+
+
+// function Comment(props) {
+
+//   console.log(props);
+
+//   return (
+//     <div className="comment">
+//       <Userinfo 
+//         userInfo = {props}
+//       />
+//       <div className="comment-text">
+//         {props.text}
+//       </div>
+//       <div className="comment-date">
+//         {props.date}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Comment;

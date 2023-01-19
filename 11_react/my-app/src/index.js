@@ -8,6 +8,12 @@ import Library from './chapter3/Library';
 import Clock from './chapter4/Clock';
 import PropUse from './chapter5/5.3/PropUse';
 import Comment from './chapter5/5.6/Comment';
+import Recomment from './chapter5/5.6re/Recomment';
+import CommentList from './chapter5/CommentList';
+import NotificationList from './chapter6/NotificationList';
+import Counter from './chapter7/7.2/Counter';
+import CounterEffect from './chapter7/7.2/7.3/CounterEffect';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -35,15 +41,42 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   // );
 
   // 5.6장 예제
+  // root.render(
+  //   <Comment 
+  //   user = "고니"
+  //   name = "goni"
+  //   text ="안녕하세요. 고니입니다."
+  //   date ="2023.01.18"
+  //   avatarUrl = "http://via.placeholder.com/200x200"
+  //   />
+  // );
+
+  // 5.6장 연습
+  // root.render(
+  //   <Recomment />
+  // );
+
+  // chapter5 예제
+  // root.render(
+  //   <CommentList />
+  // );
+
+  // chapter6 예제
+  // root.render(
+  //   <NotificationList />
+  // );
+
+  // chapter7.2 예제
+  // root.render(
+  //   <Counter />
+  // );
+
+  // chapter7.3 예제
   root.render(
-    <Comment 
-    author = "고니"
-    name = "goni"
-    text ="안녕하세요. 고니입니다."
-    date ="2023.01.18"
-    avatarUrl = "http://via.placeholder.com/200x200"
-    />
+      <CounterEffect />
   );
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

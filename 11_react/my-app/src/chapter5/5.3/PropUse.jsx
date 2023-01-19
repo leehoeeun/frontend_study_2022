@@ -3,10 +3,10 @@ import Header from "./Header";
 import Layout from "./Layout";
 import Profile from "./Profile";
 
-function PropUse(props) {
+function PropUse(props) {   
   return (
     <>
-      <Profile 
+      <Profile    // props를 Profile 함수에 보내면 Profile.jsx에서 처리하여 element props로 return해준다
         // 키-값 쌍의 형태로 컴포넌트에 props를 전달할 수 있음
         // 정수, 변수, 다른 컴포넌트 등 값을 넣을 때는 {}중괄호로 감싼다.
         // 문자열은 {}중괄호 생략가능

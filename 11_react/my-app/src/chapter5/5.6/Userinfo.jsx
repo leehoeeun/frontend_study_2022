@@ -5,10 +5,10 @@ function Userinfo(props) {
   return (
     <div className="user-info">
     <Avatar 
-    user={props.user}
+    userInfo={props.userInfo}
     />
     <div className="user-info-name">
-      {props.user.name}
+      {props.userInfo.user}
     </div>
   </div>
   );
