@@ -12,7 +12,7 @@ import Recomment from './chapter5/5.6re/Recomment';
 import CommentList from './chapter5/CommentList';
 import NotificationList from './chapter6/NotificationList';
 import Counter from './chapter7/7.2/Counter';
-import CounterEffect from './chapter7/7.2/7.3/CounterEffect';
+import CounterEffect from './chapter7/7.3/CounterEffect';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -57,9 +57,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   // );
 
   // chapter5 예제
-  // root.render(
-  //   <CommentList />
-  // );
+  root.render(
+    <CommentList />
+  );
 
   // chapter6 예제
   // root.render(
@@ -72,9 +72,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   // );
 
   // chapter7.3 예제
-  root.render(
-      <CounterEffect />
-  );
+  // root.render(
+  //     <CounterEffect />
+  // );
 
 
 

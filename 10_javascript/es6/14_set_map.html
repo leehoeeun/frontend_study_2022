@@ -69,7 +69,7 @@
     const mySet = new Set(myArray);
     console.log(mySet);
 
-    // Set객체를 을 Array로 변환
+    // Set객체를 을 Array로nst uniqueArray = A 변환
     const uniqueArray = Array.from(mySet) ;
     console.log(uniqueArray);
     const uniqueArray2 = [...mySet] ;
@@ -101,22 +101,22 @@
     console.log(familyMap);
 
     // TODO : 필기 놓침
-    // console.log(familyMap.size);
-    // console.log(familyMap.get('Dad')); // 키값이 고유해서, 키값으로 특정 요소를 얻을 수 있다
-    // familyMap.set('Dad', 60); // 같은 키값으로 새로운 값 추가할 경우
-    // console.log(familyMap); // 새로운 값으로 이전 키의 값이 덮어씌어짐
+    console.log(familyMap.size);
+    console.log(familyMap.get('Dad')); // 키값이 고유해서, 키값으로 특정 요소를 얻을 수 있다
+    familyMap.set('Dad', 60); // 같은 키값으로 새로운 값 추가할 경우
+    console.log(familyMap); // 새로운 값으로 이전 키의 값이 덮어씌어짐
 
-    // familySet.add('Dad'); // 이미 객체 안에 있는 Dad는 추가로 안들어감!
-    // console.log(familySet); 
-    // // Set은 고유한 값만 가질 수 있기 때문에(중복 저장 불가)
+    familySet.add('Dad'); // 이미 객체 안에 있는 Dad는 추가로 안들어감!
+    console.log(familySet); 
+    // Set은 고유한 값만 가질 수 있기 때문에(중복 저장 불가)
 
-    // console.log(familySet.size);   // 배열은 length를 통해 값 개수를 안다면, 객체는 size를 통해 객체 내 값 개수를 알 수 있다
-    // console.log(familySet.values());  // 값 들을 Iterator 객체에 담아 반환
-    // console.log(familySet.has('Dad'));  // 특정 요소 있는지 검색
-    // familySet.delete('Dad'); // 특정 요소 삭제
-    // console.log(familySet); 
-    // familySet.clear();  // 모든 요소 삭제
-    // console.log(familySet); 
+    console.log(familySet.size);   // 배열은 length를 통해 값 개수를 안다면, 객체는 size를 통해 객체 내 값 개수를 알 수 있다
+    console.log(familySet.values());  // 값 들을 Iterator 객체에 담아 반환
+    console.log(familySet.has('Dad'));  // 특정 요소 있는지 검색
+    familySet.delete('Dad'); // 특정 요소 삭제
+    console.log(familySet); 
+    familySet.clear();  // 모든 요소 삭제
+    console.log(familySet); 
 
     // Map에 대한 루프
     familyMap.set('Dad', 50);

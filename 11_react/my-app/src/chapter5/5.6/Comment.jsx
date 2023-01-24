@@ -1,7 +1,7 @@
 import Avatar from "./Avatar";
 import Userinfo from "./Userinfo";
 
-function Comment(props) {
+// function Comment(props) {
   // return (
   //   //원본
   //   <div className="comment">
@@ -22,24 +22,24 @@ function Comment(props) {
   //     </div>
   //   </div>
   // );
-  console.log(props);
+//   console.log(props);
 
-  return (
-    <div className="comment">
-      <Userinfo 
-        user={props}
-      />
-      <div className="comment-text">
-        {props.text}
-      </div>
-      <div className="comment-date">
-        {props.date}
-      </div>
-    </div>
-  );
-}
+//   return (
+//     <div className="comment">
+//       <Userinfo 
+//         user={props}
+//       />
+//       <div className="comment-text">
+//         {props.text}
+//       </div>
+//       <div className="comment-date">
+//         {props.date}
+//       </div>
+//     </div>
+//   );
+// }
 
-export default Comment;
+// export default Comment;
 
 
 // author = "고니"
@@ -69,3 +69,23 @@ export default Comment;
 // }
 
 // export default Comment;
+
+
+function Comment(props) {
+  console.log(props);
+  return (
+    <div className="comment">
+      <Userinfo 
+        userInfo={props}
+      />
+      <div className="comment-text">
+        {props.text}
+      </div>
+      <div className="comment-date">
+        {props.date}
+      </div>
+    </div>
+  );
+};
+
+export default Comment;

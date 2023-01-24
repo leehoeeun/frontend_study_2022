@@ -6,8 +6,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script>
+    const familySet = new Set();
+    console.log(familySet);
 
+    familySet.add('Dad');
+    console.log(familySet);
+    familySet.add('Mom');
+    console.log(familySet);
+    familySet.add('Son');
+    console.log(familySet);
+    familySet.add('Dad');
+    console.log(familySet);
 
+    console.log(familySet.size);
+    console.log(familySet.values());
+    console.log(familySet.has('Dad'));
+    familySet.delete('Dad');
+    console.log(familySet);
+    familySet.clear();
+    console.log(familySet);
+
+    familySet.add('Dad');
+    familySet.add('Mom');
+    familySet.add('Son');
+
+    const Iterator = familySet.values();
+    console.log(Iterator);
+    console.log(Iterator.next());
+    console.log(Iterator.next());
+    console.log(Iterator.next());
+    console.log(Iterator.next());
+    
+    for (const person of familySet) {
+      console.log(person);
+    }
+
+    familySet.forEach((value) => {
+      console.log(value);
+    });
+
+    const myArray = ['dad', 'mom', 'son', 'dad', 'mom', 'daughter'];
+    const mySet = new Set(myArray);
+    console.log(mySet);
+
+    const uniqueArray = Array.from(mySet);
+    console.log(uniqueArray);
+    const uniqueArray2 = [...mySet];
+    console.log(uniqueArray2);
+
+// -----------------------------------------------------------------------------//
+// Map()
+    const familyMap = new Map();
+    console.log(familyMap);
+
+    familyMap.set('Dad', 50);
+    familyMap.set('Mom', 40);
+    familyMap.set('Son', 30);
+    familyMap.set('Dad', 60);
+    console.log(familyMap);
+
+    familyMap.forEach((value, key) => {
+      console.log(key, value);
+    });
+
+    for (const person of familyMap) {
+      console.log(person);
+    }
+
+    
 
 
 
