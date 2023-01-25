@@ -24,6 +24,8 @@ import TextInputWithFocusButton from './chapter7/7.6/TextInputWithFocusButton';
 import ComponentVariable from './chapter7/7.6/ComponentVariable';
 import UserStatusEx from './chapter7/7.8/ex1/UserStatusEx';
 import InputContainer from './chapter7/7.8/ex2/InputContainer';
+import ReClock from './chapter4/ReClock';
+import RePropUse from './chapter5/5.3review/RePropUse';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -41,15 +43,17 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // 1초 마다 Clock 컴포넌트를 root div에 렌더링 하는 코드
 // setInterval(() => {
 //   root.render(
-//     <Clock />
+//     // <Clock />
+//     <ReClock />
 //   );
 // }, 1000);
 // 전체 UI를 다시 렌더링 하도록 만들었지만 React DOM은 내용이 변경된 텍스트 노드만 업데이트
 
   // 5.3장 예제
-  // root.render(
-  //   <PropUse />
-  // );
+  root.render(
+    // <PropUse />
+    <RePropUse />
+  );
 
   // 5.6장 예제
   // root.render(
@@ -110,13 +114,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   // );
 
     // 7.5 & 7.6 예제
-    root.render(
+    // root.render(
       // <ParentComponent />
       // <TextInputWithFocusButton />
       // <ComponentVariable />
       // <UserStatusEx />
-      <InputContainer />
-    );
+      // <InputContainer />
+    // );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
