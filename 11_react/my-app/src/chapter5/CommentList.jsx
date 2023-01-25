@@ -48,11 +48,11 @@ function CommentList(props) {
 
       {/* map() 함수 결과 */}
       {/* React는 객체, 배열 내에 데이터가 변경되는 걸 인지하지 못한다. 그래서 map()과 같이 원본을 두고 새로운 배열, 객체로 만들어주는 동기적 함수를 사용해야 수정, 변경된 부분을 인식한다. 또는 state(상태)를 나타내는 것을 이용해서~~~~~~인식시키는 방법도 있다 */}
-      {[
-      // <Comment name = {'이회은'} comment = {'안녕하세요, 이회은입니다.'} date = {'2023.01.19'}/>,
-      // <Comment name = {'MinRo'} comment = {'안녕하세요, MinRo입니다.'} date = {'2023.01.19'}/>,
-      // <Comment name = {'이회은'} comment = {'안녕하세요, 이회은입니다.'} date = {'2023.01.19'}/>,
-      ]}
+      {/* {[
+      <Comment name = {'이회은'} comment = {'안녕하세요, 이회은입니다.'} date = {'2023.01.19'}/>,
+      <Comment name = {'MinRo'} comment = {'안녕하세요, MinRo입니다.'} date = {'2023.01.19'}/>,
+      <Comment name = {'이회은'} comment = {'안녕하세요, 이회은입니다.'} date = {'2023.01.19'}/>,
+      ]} */}
 
 
       {/* Data를 하드코딩으로 함 */}

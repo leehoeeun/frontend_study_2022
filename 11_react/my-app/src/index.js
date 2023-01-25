@@ -26,6 +26,7 @@ import InputContainer from './chapter7/7.8/ex2/InputContainer';
 import ReClock from './chapter4/ReClock';
 import RePropUse from './chapter5/5.3review/RePropUse';
 import ReComment from './chapter5/5.6review/ReComment';
+import ReCommentList from './chapter5/5.7review/ReCommentList';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -65,25 +66,24 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   //   avatarUrl = "http://via.placeholder.com/200x200"
   //   />
   // );
-    root.render(
-    <ReComment
-      user = "이회은"
-      name = "leehoeeun"
-      text ="안녕하세요. 이회은입니다."
-      date ="2023.01.18"
-      avatarUrl = "http://via.placeholder.com/200x200"
-    />
-  );
-
+  
   // 5.6장 연습
-  // root.render(
-  //   <Recomment />
+  //   root.render(
+  //   <ReComment
+  //     user = "이회은"
+  //     name = "leehoeeun"
+  //     text ="안녕하세요. 이회은입니다."
+  //     date ="2023.01.18"
+  //     avatarUrl = "http://via.placeholder.com/200x200"
+  //   />
   // );
+
 
   // chapter5 예제
-  // root.render(
-  //   <CommentList />
-  // );
+  root.render(
+    // <CommentList />
+    <ReCommentList />
+  );
 
   // chapter6 예제
   // root.render(
