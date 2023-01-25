@@ -5,27 +5,27 @@ import Comment from "./Comment";
 const comments = [
   {
     name: '이회은',
-    comment: '보고 싶다~! 한국 와라!',
+    comment: '안녕하세요. 프론트엔드 엔지니어 이회은입니다.',
     date: '2023.01.19'
   },
   {
-    name: 'MinRo',
-    comment: '곧 갈게~',
+    name: '면접관',
+    comment: '네, 안녕하세요.',
     date: '2023.01.19'
   },
   {
-    name: '이회은',
-    comment: '언제?',
-    date: '2023.01.19'
-  },
-  {
-    name: 'MinRo',
-    comment: '6월에 갈게',
+    name: '면접관',
+    comment: '귀하는 합격되었습니다.',
     date: '2023.01.19'
   },
   {
     name: '이회은',
-    comment: '빨리와!! 달려와!!',
+    comment: '확인감사합니다. 그럼 언제부터 출근하면 되나요?',
+    date: '2023.01.19'
+  },
+  {
+    name: '면접관',
+    comment: '다음주 월요일 10시까지 오셔서 010-2222-3333으로 연락주세요.',
     date: '2023.01.19'
   },
 ];

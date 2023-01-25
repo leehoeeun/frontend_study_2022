@@ -12,7 +12,18 @@ import Recomment from './chapter5/5.6re/Recomment';
 import CommentList from './chapter5/CommentList';
 import NotificationList from './chapter6/NotificationList';
 import Counter from './chapter7/7.2/Counter';
+import CounTest from './chapter7/7.2/CounTest.jsx';
 import CounterEffect from './chapter7/7.3/CounterEffect';
+import SetStateMerge from './chapter7/7.2/SetStateMerge';
+import EffectSummary from './chapter7/7.3/EffectSummary';
+import EffectConteiner from './chapter7/7.3/EffectContainer';
+import TimerConTainer from './chapter7/7.3/TimerContainer';
+import HeavyCalculator from './chapter7/7.4/HeavyCalculator';
+import ParentComponent from './chapter7/7.5/ParentComponent';
+import TextInputWithFocusButton from './chapter7/7.6/TextInputWithFocusButton';
+import ComponentVariable from './chapter7/7.6/ComponentVariable';
+import UserStatusEx from './chapter7/7.8/ex1/UserStatusEx';
+import InputContainer from './chapter7/7.8/ex2/InputContainer';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -57,9 +68,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   // );
 
   // chapter5 예제
-  root.render(
-    <CommentList />
-  );
+  // root.render(
+  //   <CommentList />
+  // );
 
   // chapter6 예제
   // root.render(
@@ -70,13 +81,42 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   // root.render(
   //   <Counter />
   // );
+  
+  // Counter 연습 
+  // root.render(
+  //   <CounTest />
+  // );
 
   // chapter7.3 예제
   // root.render(
   //     <CounterEffect />
   // );
 
+  // chapter7.2 예제2
+  // root.render(
+  //   <SetStateMerge />
+  // );
 
+  // 7.3 예제2
+  // root.render(
+    // <EffectSummary />
+    // <EffectConteiner />
+    // <TimerConTainer />
+  // );
+
+  // // 7.4 예제2
+  // root.render(
+  //   <HeavyCalculator />
+  // );
+
+    // 7.5 & 7.6 예제
+    root.render(
+      // <ParentComponent />
+      // <TextInputWithFocusButton />
+      // <ComponentVariable />
+      // <UserStatusEx />
+      <InputContainer />
+    );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
