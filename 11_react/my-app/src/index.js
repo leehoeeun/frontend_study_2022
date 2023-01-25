@@ -8,7 +8,6 @@ import Library from './chapter3/Library';
 import Clock from './chapter4/Clock';
 import PropUse from './chapter5/5.3/PropUse';
 import Comment from './chapter5/5.6/Comment';
-import Recomment from './chapter5/5.6re/Recomment';
 import CommentList from './chapter5/CommentList';
 import NotificationList from './chapter6/NotificationList';
 import Counter from './chapter7/7.2/Counter';
@@ -26,6 +25,7 @@ import UserStatusEx from './chapter7/7.8/ex1/UserStatusEx';
 import InputContainer from './chapter7/7.8/ex2/InputContainer';
 import ReClock from './chapter4/ReClock';
 import RePropUse from './chapter5/5.3review/RePropUse';
+import ReComment from './chapter5/5.6review/ReComment';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -50,10 +50,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // 전체 UI를 다시 렌더링 하도록 만들었지만 React DOM은 내용이 변경된 텍스트 노드만 업데이트
 
   // 5.3장 예제
-  root.render(
-    // <PropUse />
-    <RePropUse />
-  );
+  // root.render(
+  //   // <PropUse />
+  //   <RePropUse />  // 연습
+  // );
 
   // 5.6장 예제
   // root.render(
@@ -65,6 +65,15 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   //   avatarUrl = "http://via.placeholder.com/200x200"
   //   />
   // );
+    root.render(
+    <ReComment
+      user = "이회은"
+      name = "leehoeeun"
+      text ="안녕하세요. 이회은입니다."
+      date ="2023.01.18"
+      avatarUrl = "http://via.placeholder.com/200x200"
+    />
+  );
 
   // 5.6장 연습
   // root.render(
