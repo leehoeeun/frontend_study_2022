@@ -28,6 +28,7 @@ import RePropUse from './chapter5/5.3review/RePropUse';
 import ReComment from './chapter5/5.6review/ReComment';
 import ReCommentList from './chapter5/5.7review/ReCommentList';
 import Accommodate from './chapter7/7.8/Accommodate';
+import Toggle from './chapter8/8.1/Toggle';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -132,8 +133,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     //   // <InputContainer />
     // );
 
+    // root.render(
+    //   <Accommodate />
+    // );
+
     root.render(
-      <Accommodate />
+      <Toggle />
     );
 
 // If you want to start measuring performance in your app, pass a function
