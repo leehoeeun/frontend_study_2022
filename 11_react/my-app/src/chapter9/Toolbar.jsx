@@ -32,14 +32,17 @@ function Toolbar(props) {
       {/* isLoggedIn 값에 따라 조건부 렌더링 처리 */}
       
       <GreetingShow show={isLoggedIn} />
+      {/* {isLoggedIn && } */}
       {isLoggedIn
       ? <button onClick={onClickLogout}>로그아웃</button>
       : <button onClick={onClickLogin}>로그인</button>
       }
-      
       
     </div>
   );
 }
 
 export default Toolbar;
+
+// 정리
+// 논리 연산자 (&&)와 삼항 연산자

@@ -148,7 +148,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     const messages = ['React', 'Re:React', 'Re:Re:React'];
     // const messages = [];
     root.render(
-      // <Toggle />
+      <Toggle />
       // <MyButton />
       // <ConfirmButton />
       // <Greeting 
@@ -160,7 +160,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       // />
       // <LoginControlRefactory/>
       // <MainPage />
-      <LandingPage />
+      // <LandingPage />
     );
 
 // If you want to start measuring performance in your app, pass a function
