@@ -29,6 +29,14 @@ import ReComment from './chapter5/5.6review/ReComment';
 import ReCommentList from './chapter5/5.7review/ReCommentList';
 import Accommodate from './chapter7/7.8/Accommodate';
 import Toggle from './chapter8/8.1/Toggle';
+import MyButton from './chapter8/8.2/MyButton';
+import ConfirmButton from './chapter8/ConfirmButton';
+import Greeting from './chapter9/9.1/Greeting';
+import LoginControl from './chapter9/9.2/LoginControl';
+import Mailbox from './chapter9/9.3/Mailbox';
+import LoginControlRefactory from './chapter9/9.3/LoginControlRefactory';
+import MainPage from './chapter9/9.4/MainPage';
+import LandingPage from './chapter9/LandingPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -137,8 +145,22 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     //   <Accommodate />
     // );
 
+    const messages = ['React', 'Re:React', 'Re:Re:React'];
+    // const messages = [];
     root.render(
-      <Toggle />
+      // <Toggle />
+      // <MyButton />
+      // <ConfirmButton />
+      // <Greeting 
+      //   isLoggedIn = {true}
+      // />
+      // <LoginControl />
+      // <Mailbox 
+      //   unreadMessages={messages}
+      // />
+      // <LoginControlRefactory/>
+      // <MainPage />
+      <LandingPage />
     );
 
 // If you want to start measuring performance in your app, pass a function
