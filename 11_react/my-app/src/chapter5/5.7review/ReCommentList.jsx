@@ -38,13 +38,12 @@ function ReCommentList(props) {
         // console.log(comments.date);
         return (
           <ReComment 
-            key = {index} 
+            key = {index}
             name = {comments.name}
             comment = {comments.comment}
             date = {comments.date}
           />
         );
-        console.log(key);
       })}
     </div>
   );

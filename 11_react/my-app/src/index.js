@@ -27,6 +27,7 @@ import ReClock from './chapter4/ReClock';
 import RePropUse from './chapter5/5.3review/RePropUse';
 import ReComment from './chapter5/5.6review/ReComment';
 import ReCommentList from './chapter5/5.7review/ReCommentList';
+import Accommodate from './chapter7/7.8/Accommodate';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -80,10 +81,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
   // chapter5 예제
-  root.render(
-    // <CommentList />
-    <ReCommentList />
-  );
+  // root.render(
+  //   // <CommentList />
+  //   <ReCommentList />
+  // );
 
   // chapter6 예제
   // root.render(
@@ -124,12 +125,16 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
     // 7.5 & 7.6 예제
     // root.render(
-      // <ParentComponent />
-      // <TextInputWithFocusButton />
-      // <ComponentVariable />
-      // <UserStatusEx />
-      // <InputContainer />
+    //   // <ParentComponent />
+    //   // <TextInputWithFocusButton />
+    //   // <ComponentVariable />
+    //   // <UserStatusEx />
+    //   // <InputContainer />
     // );
+
+    root.render(
+      <Accommodate />
+    );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

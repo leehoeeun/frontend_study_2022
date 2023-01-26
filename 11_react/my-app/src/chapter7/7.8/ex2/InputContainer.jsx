@@ -8,13 +8,24 @@ function InputContainer() {
   //   setInterval(e.target.value);
   // };
 
-  const [inputValue, handleChange] = useInput('');
+  // const [inputValue, handleChange, handleSubmit] = useInput('');
+  const [inputValue, handleChange, reset] = useInput('');
 
   // Quiz: 커스텀 훅에 넣어보기
+  // const handleSubmit = () => {
+  //   alert(inputValue);
+  //   // setInputValue('')
+  // };  // ----> useInput.jsx 로 옮기고 위에 11번줄 변수에 할당
+  // ---->but 아래와 같은 경우!!!
+
+  // 데이터 서버에 보내기전 작업은 컴포넌트마다 다를 수 있기 때문에
+  // 커스텀 훅이 아닌 지금 jsx 파일에 넣어서 관리 해준다
   const handleSubmit = () => {
     alert(inputValue);
-    // setInputValue('')
+    reset();   // reset() 함수는 초기화 해주는 역할임
   };
+
+
 
   return (
     <div>
