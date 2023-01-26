@@ -3,7 +3,13 @@ import { useState } from "react";
 function Counter (props) {
 
   // state를 사용해서 값이 바뀔 때마다 재렌더링이 되도록 하겠다.
-  const [count, setCount] = useState(0);  // 초기값으로 0 할당  // 무조건 useState로 쓸 것!!
+  const [count, setCount] = useState(0);  
+  // 초기값(인자갑)으로 0 할당  // 무조건 useState로 쓸 것!!
+  // TODO : 위 구조분해 할당을 풀어서 해석하면 아래와 같음
+  // console.log(useState(0));
+  // const arr = useState(0);   
+  // const count = arr[0];
+  // const setCount = arr[1];
   // useState()의 결과로 배열이 반환됨 -> [0, set함수]
   // (이름 지을 때 관례)변수명을 count로 state를 만들었으면 두번째 인수를 setCount로 짓는다
   // 첫번째 요소는 현재 변수를 의미하고, 두 번째 요소는 해당 변수를 갱신해주는 함수
