@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // let aa;
+    // let bb = null;
+    // let cc = undefined;
+    // let dd = 4;
+    // let ee = 'five';
+    // let ff = aa || bb || cc || dd || ee;
+    // console.log(ff);
+
+    // const name = prompt('이름을 입력하세요.');
+    // if (name) {
+    //   document.write(`${name}님 환영합니다!`);
+    // }
+
+// let sum = 0;
+// for (let i = 0; i <= 100; i++) {
+//   if (i % 2 === 0) {
+//     sum = sum + i; 
+//   }
+// }
+// document.write(sum);
+
+
+// for (let i = 1; i <= 6; i++) {
+//   for (let j = 1; j <= 6; j++) {
+//     if (i + j === 6) {
+//       document.write(`[${i}, ${j}]<br>`);
+//     }
+//   }
+// }
+
+
+// const fileName = 'cat_dog.tmp.jpg';
+// const lastIndexOf = fileName.lastIndexOf('.');  // 11
+// const textLength = fileName.length;  // 15
+// const subStr = fileName.substr(lastIndexOf, textLength);
+// document.write(subStr);
+
+// const moneyList = [2000000, 240000, 3000000, 1500];
+// const price = moneyList.map((money) => {
+//   return money/10
+// })
+// console.log(price);
+
+
+
+
+// const members = [
+//   { id: 'a1', name: 'Goni', age: 36 },
+//   { id: 'a2', name: 'Pony', age: 32 },
+//   { id: 'a3', name: 'Tony', age: 12 },
+//   { id: 'a4', name: 'Moly', age: 24 },
+//   { id: 'a5', name: 'Noni', age: 45 }
+// ];
+
+// const deleteMember = (props) => {
+//   const deleteId = members.filter((member) => {
+//     const idCheck = member.id;  // a1, a2, a3, a4, a5
+//     return (idCheck !== props)
+//   });
+//   console.log(deleteId);
+// }
+// deleteMember('a3');
+
+// const userInfo = {
+//   name: 'Goni Kim',
+//   age: 30
+// };
+// const copy = {
+//   ...userInfo,
+//   height: 175
+// };
+// console.log(copy);
+// copy.height = 178;
+// console.log(copy);
+
+const textShort = prompt('줄일 문장을 적으세요.');
+const copyTextShort = textShort.split(' ')
+
+for (let i = 0; i < copyTextShort.length; i++) {
+  document.write(copyTextShort[i].substr(0, 1));
+}
+
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
