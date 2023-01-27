@@ -37,6 +37,12 @@ import Mailbox from './chapter9/9.3/Mailbox';
 import LoginControlRefactory from './chapter9/9.3/LoginControlRefactory';
 import MainPage from './chapter9/9.4/MainPage';
 import LandingPage from './chapter9/LandingPage';
+import NumberList from './chapter10/10.1/NumberList';
+import AttendanceBook from './chapter10/10.1/AttendanceBook';
+import NameForm from './chapter11/11.2/NameForm';
+import EssayForm from './chapter11/11.3/EssayForm';
+import FlavorForm from './chapter11/11.3/FlavorForm';
+import FileInput from './chapter11/11.3/FileInput';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -147,8 +153,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
     const messages = ['React', 'Re:React', 'Re:Re:React'];
     // const messages = [];
-    root.render(
-      <Toggle />
+    // root.render(
+      // <Toggle />
       // <MyButton />
       // <ConfirmButton />
       // <Greeting 
@@ -161,6 +167,17 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       // <LoginControlRefactory/>
       // <MainPage />
       // <LandingPage />
+    // );
+
+    // 10장
+    const numbers = [1, 2, 3, 4, 5];
+    root.render(
+      // <NumberList numbers = {numbers}/>
+      // <AttendanceBook />
+      // <NameForm />
+      // <EssayForm />
+      // <FlavorForm />
+      <FileInput />
     );
 
 // If you want to start measuring performance in your app, pass a function
