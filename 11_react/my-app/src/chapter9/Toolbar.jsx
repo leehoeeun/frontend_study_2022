@@ -44,5 +44,9 @@ function Toolbar(props) {
 
 export default Toolbar;
 
-// 정리
-// 논리 연산자 (&&)와 삼항 연산자
+// 정리: 
+// 논리 연산자(&&)와 삼항 연산자(? :)를 이용한 조건부 렌더링은 매우 많이 쓰임
+// 동적인 UI 만드는 3 step
+// 1. HTML/CSS로 미리 디자인 완성
+// 2. UI 현재 상태를 state로 저장
+// 3. 조건문으로 state에 따라 UI가 어떻게 보일지 작성

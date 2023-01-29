@@ -37,6 +37,13 @@ import Mailbox from './chapter9/9.3/Mailbox';
 import LoginControlRefactory from './chapter9/9.3/LoginControlRefactory';
 import MainPage from './chapter9/9.4/MainPage';
 import LandingPage from './chapter9/LandingPage';
+import ReToggle from './chapter8/8.1review/ReToggle';
+import ReMyButton from './chapter8/8.2review/ReMyButton';
+import ReConfirmButton from './chapter8/ReConfirmButton';
+import ReGreeting from './chapter9/9.1review/ReGreeting';
+import ReLoginControl from './chapter9/9.2review/ReLoginControl';
+import ReMailbox from './chapter9/9.3review/ReMailbox';
+import ReLoginControlRefactory from './chapter9/9.3review/ReLoginControlRefactory';
 import NumberList from './chapter10/10.1/NumberList';
 import AttendanceBook from './chapter10/10.1/AttendanceBook';
 import NameForm from './chapter11/11.2/NameForm';
@@ -151,23 +158,36 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     //   <Accommodate />
     // );
 
-    const messages = ['React', 'Re:React', 'Re:Re:React'];
+    // const messages = ['React', 'Re:React', 'Re:Re:React'];
     // const messages = [];
+    const messages = ['답장해', 'Re: 답장하라고', 'Re: Re: 진짜 답장안할거야!!'];
     // root.render(
       // <Toggle />
+      // <ReToggle />
       // <MyButton />
+      // <ReMyButton />
       // <ConfirmButton />
+      // <ReConfirmButton />
       // <Greeting 
       //   isLoggedIn = {true}
       // />
+      // <ReGreeting 
+      //   isLoggedIn = {false}
+      // />
       // <LoginControl />
+      // <ReLoginControl />
       // <Mailbox 
       //   unreadMessages={messages}
       // />
+      // <ReMailbox
+      //   unreadMessages={messages}
+      // />
       // <LoginControlRefactory/>
+      // <ReLoginControlRefactory />
       // <MainPage />
       // <LandingPage />
     // );
+    
 
     // 10장
     const numbers = [1, 2, 3, 4, 5];
