@@ -29,8 +29,8 @@ function SignUp() {
   useEffect(() => {
     console.log(optionEl);
     console.log(optionEl.current[0].textContent);
-    console.log(optionEl.current[1].textContent);
-
+    
+    console.log(optionEl.current.value.textContent);
   }, []);
 
   const [userGenger, setUserGenger] = useState('남성');
