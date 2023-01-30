@@ -1,0 +1,71 @@
+.header--dark {
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  padding: 0 20px;
+}
+
+.inner {
+  padding: 0 20px;
+}
+
+.list {
+  width: 380px;
+  margin: 20px 0;
+  padding: 10px 10px;
+  /* border: 1px solid gray; */
+  /* border-radius: 6px; */
+  cursor: pointer;
+}
+.list:hover {
+  background-color: #eaeaea;
+}
+
+.detail {
+  margin-top: 20px;
+  padding: 10px 20px 20px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+}
+
+/* TODO : 삭제할 것 */
+.img_group {
+  position: relative;
+  display: inline-block;
+}
+.img_group > img {
+  border-radius: 30px;
+}
+.btn_like {
+  font-size: 30px;
+  background-color: transparent;
+  border: none;
+  color: black;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.btn_like:hover{
+  color: red;
+}
+.text_group {
+  position: relative;
+}
+.roomTitle {
+  margin: 8px 0px;
+}
+.viewPoint, .possibleDate {
+  color: #777;
+  margin: 4px 0px;
+}
+.roomOnedayPrice {
+  font-weight: 600;
+}
+.like_count_group {
+  position: absolute;
+  top: 8px;
+  right: 0px;
+}
