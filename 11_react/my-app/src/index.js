@@ -50,6 +50,9 @@ import NameForm from './chapter11/11.2/NameForm';
 import EssayForm from './chapter11/11.3/EssayForm';
 import FlavorForm from './chapter11/11.3/FlavorForm';
 import FileInput from './chapter11/11.3/FileInput';
+import Reservation from './chapter11/11.4/Reservation';
+import ReservationRefactoring from './chapter11/11.4/ReservationRefactoring';
+import SignUp from './chapter11/SignUp';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -148,7 +151,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     // 7.5 & 7.6 예제
     // root.render(
     //   // <ParentComponent />
-    //   // <TextInputWithFocusButton />
+      // <TextInputWithFocusButton />
     //   // <ComponentVariable />
     //   // <UserStatusEx />
     //   // <InputContainer />
@@ -197,7 +200,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       // <NameForm />
       // <EssayForm />
       // <FlavorForm />
-      <FileInput />
+      // <FileInput />
+      // <Reservation />
+      // <ReservationRefactoring />
+      <SignUp />
     );
 
 // If you want to start measuring performance in your app, pass a function
