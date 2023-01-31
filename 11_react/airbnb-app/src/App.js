@@ -66,6 +66,7 @@ return (
 
     <div className='inner'>
         {posts.map((post, index) => {
+          // console.log(post[0].areaName);
           return (
             <div className='list'>
               <div className='img_group'>
@@ -74,13 +75,13 @@ return (
               </div>
               <div className='text_group'>
                 <h4 className='roomTitle'>
-                  <span>area,</span>
-                  <span>city,</span>
-                  <span>country,</span>
+                  <span>{post.areaName}, </span>
+                  <span>{post.cityName},</span>
+                  <span>{post.countryName},</span>
                 </h4>
-                <p className='viewPoint'>view point</p>
-                <p className='possibleDate'>possible date</p>
-                <p className='roomOnedayPrice'>price</p>
+                <p className='viewPoint'>{post.viewPoint}</p>
+                <p className='possibleDate'>{post.possibleDate}</p>
+                <p className='roomOnedayPrice'>{post.roomOnedayPrice}</p>
                 <div className='like_count_group'>
                   <span className="btn_like_count">❤</span>
                   <span>1000</span>

@@ -53,6 +53,11 @@ import FileInput from './chapter11/11.3/FileInput';
 import Reservation from './chapter11/11.4/Reservation';
 import ReservationRefactoring from './chapter11/11.4/ReservationRefactoring';
 import SignUp from './chapter11/SignUp';
+import Calculator from './chapter12/Calculator';
+import WelcomeDialog from './chapter13/13.1.1.1/WelcomeDialog';
+import SplitPaneSection from './chapter13/13.1.1.2/SplitePaneSection';
+import DialogContainer from './chapter13/13.1.2/DialogContainer';
+import SignUpDialog from './chapter13/13.1.3/SignUpDialog';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -194,16 +199,24 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
     // 10장
     const numbers = [1, 2, 3, 4, 5];
+    // root.render(
+    //   // <NumberList numbers = {numbers}/>
+    //   // <AttendanceBook />
+    //   // <NameForm />
+    //   // <EssayForm />
+    //   // <FlavorForm />
+    //   // <FileInput />
+    //   // <Reservation />
+    //   // <ReservationRefactoring />
+    //   <SignUp />
+    // );
+
     root.render(
-      // <NumberList numbers = {numbers}/>
-      // <AttendanceBook />
-      // <NameForm />
-      // <EssayForm />
-      // <FlavorForm />
-      // <FileInput />
-      // <Reservation />
-      // <ReservationRefactoring />
-      <SignUp />
+      // <Calculator />
+      // <WelcomeDialog />
+      <SplitPaneSection />
+      // <DialogContainer />
+      // <SignUpDialog />
     );
 
 // If you want to start measuring performance in your app, pass a function
