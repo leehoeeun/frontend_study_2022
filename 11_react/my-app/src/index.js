@@ -59,6 +59,10 @@ import SplitPaneSection from './chapter13/13.1.1.2/SplitePaneSection';
 import DialogContainer from './chapter13/13.1.2/DialogContainer';
 import SignUpDialog from './chapter13/13.1.3/SignUpDialog';
 import ProfileCard from './chapter13/ProfileCard';
+import ThemeContext from './chapter14/ThemeContext';
+import DarkOrLight from './chapter14/DarkOrLight';
+import MainContent from './chapter14/MainContent';
+import StyledPage from './chapter15/StyledPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -221,8 +225,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     // );
 
     // 2023-02-01 공부
+    // root.render(
+    //   // <ProfileCard />
+    //   <DarkOrLight />
+    // );
+    
+    //15장 예제 
     root.render(
-      <ProfileCard />
+      <StyledPage />
     );
 
 // If you want to start measuring performance in your app, pass a function
