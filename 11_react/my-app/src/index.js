@@ -58,6 +58,7 @@ import WelcomeDialog from './chapter13/13.1.1.1/WelcomeDialog';
 import SplitPaneSection from './chapter13/13.1.1.2/SplitePaneSection';
 import DialogContainer from './chapter13/13.1.2/DialogContainer';
 import SignUpDialog from './chapter13/13.1.3/SignUpDialog';
+import ProfileCard from './chapter13/ProfileCard';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -211,12 +212,17 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     //   <SignUp />
     // );
 
+    // root.render(
+    //   // <Calculator />
+    //   // <WelcomeDialog />
+    //   // <SplitPaneSection />
+    //   // <DialogContainer />
+    //   <SignUpDialog />
+    // );
+
+    // 2023-02-01 공부
     root.render(
-      // <Calculator />
-      // <WelcomeDialog />
-      <SplitPaneSection />
-      // <DialogContainer />
-      // <SignUpDialog />
+      <ProfileCard />
     );
 
 // If you want to start measuring performance in your app, pass a function
