@@ -14,7 +14,7 @@ const [posts, setPosts] = useState([
     viewPoint: '바다전망',
     possibleDate: '2월 12일~18일',
     roomOnedayPrice: '$100',
-    likeCount: 100,
+    likeCount: 9,
   },
   {
     id: 'seoul1',
@@ -24,7 +24,7 @@ const [posts, setPosts] = useState([
     viewPoint: '바다전망',
     possibleDate: '3월 12일~18일',
     roomOnedayPrice: '$99',
-    likeCount: 10,
+    likeCount: 19,
   },
   {
     id: 'jeju1',
@@ -45,9 +45,10 @@ const [showPostDetail, setShowPostDetail] = useState(false);
 const [currentIndex, setCurrentIndex] = useState(0);
 
 // 좋아요!
-const [likeCount, setLikeCount] = useState([0, 0, 0]);   // 서버에서 받는다고 할 때 객체에 책제목이랑 같이 좋아요 수가 같이 배열안에 객체로 있을 거다!! 지금은 3 게시물에 각각의 개수를 넣어줌
+// const [likeCount, setLikeCount] = useState([0, 0, 0]);   // 서버에서 받는다고 할 때 객체에 책제목이랑 같이 좋아요 수가 같이 배열안에 객체로 있을 거다!! 지금은 3 게시물에 각각의 개수를 넣어줌
 // 단, 배열값에 직접 작업하는 것이아니라 해당 배열을 복사한 배열에 작업을 해줘야 함!
-
+// const [likeCount, setLikeCount] = useState([0, 0, 0]);
+console.log(posts[0].likeCount);
 
 
 return (
@@ -87,7 +88,7 @@ return (
                   // onClick={}
                 >
                   <span className="btn_like_count">❤</span>
-                  <span>1000</span>
+                  <span>{post.likeCount}</span>
                 </div>
               </div>
             </div>
