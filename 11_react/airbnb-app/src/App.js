@@ -68,7 +68,7 @@ return (
         {posts.map((post, index) => {
           // console.log(post[0].areaName);
           return (
-            <div className='list'>
+            <div key={post.id} className='list'>
               <div className='img_group'>
                 <img src='https://placeimg.com/360/340/any'/>
                 <button className="btn_like">❤</button>
@@ -81,8 +81,11 @@ return (
                 </h4>
                 <p className='viewPoint'>{post.viewPoint}</p>
                 <p className='possibleDate'>{post.possibleDate}</p>
-                <p className='roomOnedayPrice'>{post.roomOnedayPrice}</p>
-                <div className='like_count_group'>
+                <p className='roomOnedayPrice'>{post.roomOnedayPrice}/박</p>
+                <div 
+                  className='like_count_group'
+                  // onClick={}
+                >
                   <span className="btn_like_count">❤</span>
                   <span>1000</span>
                 </div>
