@@ -65,7 +65,7 @@ return (
       </nav>
     </header>
 
-    <div className='inner'>
+    <div className='inner postwrapper'>
         {posts.map((post, index) => {
           // console.log(post[0].areaName);
           return (

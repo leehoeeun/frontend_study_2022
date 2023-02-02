@@ -63,6 +63,7 @@ import ThemeContext from './chapter14/ThemeContext';
 import DarkOrLight from './chapter14/DarkOrLight';
 import MainContent from './chapter14/MainContent';
 import StyledPage from './chapter15/StyledPage';
+import SimpleRouter from './chapter16/SimpleRouter';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -231,9 +232,15 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     // );
     
     //15장 예제 
+    // root.render(
+    //   <StyledPage />
+    // );
+
+    // 라우터 예제
     root.render(
-      <StyledPage />
+      <SimpleRouter />
     );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

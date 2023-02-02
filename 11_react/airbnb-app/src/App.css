@@ -30,6 +30,12 @@
 }
 
 /* TODO : 삭제할 것 */
+.postwrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
 .img_group {
   position: relative;
   display: inline-block;
