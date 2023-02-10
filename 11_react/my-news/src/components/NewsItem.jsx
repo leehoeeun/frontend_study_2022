@@ -65,3 +65,5 @@ function NewsItem({ article }) {
 };
 
 export default NewsItem;
+
+// npm install styled-components axios react-router-dom

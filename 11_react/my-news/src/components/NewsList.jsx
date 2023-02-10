@@ -28,6 +28,7 @@ const sampleArticle = {
 
 // 각 뉴스 정보를 보여주는 컴포넌트
 function NewsList({ category }) {
+  console.log(category);
   const [articles, setArticles] = useState(null);
 
   // 데이터 연동하기
@@ -41,7 +42,6 @@ function NewsList({ category }) {
         const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=51bd9087a42c4fd8974a7f4715492a23`);
         console.log(response);
         setArticles(response.data.articles)
-
       } catch (error) {
         console.log(error);
       }
