@@ -47,6 +47,11 @@ function App() {
     setTodos(dbTodos);
   }, []);
 
+  // 로컬 스토리지에 저장하기
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));   // 'todos'키 값으로 todos에 저장해라 // localStorage는 모두 문자로 저장되야 함, 그래서 객체 배열을 문자로 바꿔줘야 함
+  }, [todos]);
+
   // todos 배열에 새 객체를 추가하기 위한 handleInsert()함수 정의
   // 새 객체를 만들 때마다 id값에 1씩 더해 주어야 하는데 useRef()를 사용하여 변수 생성
   // useState는 화면이 재렌더링 될 때 쓰는 걸 권장하고, id값은 렌더링 되는 정보가 아니기 때문에 ref사용
@@ -77,7 +82,7 @@ function App() {
     nextId.current += 1; // nextId에 1씩 더하기
 
     // 로컬 스토리지에 저장  // ('이름', JSON 문자로 변경)
-    localStorage.setItem('todos', JSON.stringify(todos.concat(todo)))  // 배열을 JSON으로 변경필요!
+    // localStorage.setItem('todos', JSON.stringify(todos.concat(todo)))  // 배열을 JSON으로 변경필요!
 
   }, [todos]);
   // TODO : []에 빈값이면 마운트 될 때 한 번만 usecallbak이 렌더링 됨
@@ -100,7 +105,7 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id));
 
     // TODO : 로컬 스토리지에 저장
-    localStorage.setItem('todos', JSON.stringify(todos.filter((todo) => todo.id !== id))) 
+    // localStorage.setItem('todos', JSON.stringify(todos.filter((todo) => todo.id !== id))) 
 
   }, [todos]);
 
@@ -120,9 +125,9 @@ function App() {
       todo.id === id ? { ...todo, checked: !todo.checked } : todo
     ));
     // TODO : 로컬 스토리지에 저장
-    localStorage.setItem('todos', JSON.stringify(todos.map((todo) =>
-    todo.id === id ? { ...todo, checked: !todo.checked } : todo
-  )));
+  //   localStorage.setItem('todos', JSON.stringify(todos.map((todo) =>
+  //   todo.id === id ? { ...todo, checked: !todo.checked } : todo
+  // )));
 
   }, [todos]);
 

@@ -160,13 +160,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   // );
 
     // 7.5 & 7.6 예제
-    // root.render(
-    //   // <ParentComponent />
-      // <TextInputWithFocusButton />
-    //   // <ComponentVariable />
+    root.render(
+      // <ParentComponent />
+      <TextInputWithFocusButton />
+      // <ComponentVariable />
     //   // <UserStatusEx />
     //   // <InputContainer />
-    // );
+    );
 
     // root.render(
     //   <Accommodate />
@@ -237,9 +237,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     // );
 
     // 라우터 예제
-    root.render(
-      <SimpleRouter />
-    );
+    // root.render(
+    //   // <SimpleRouter />
+    // );
 
 
 // If you want to start measuring performance in your app, pass a function
