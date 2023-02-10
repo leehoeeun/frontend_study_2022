@@ -64,6 +64,8 @@ import DarkOrLight from './chapter14/DarkOrLight';
 import MainContent from './chapter14/MainContent';
 import StyledPage from './chapter15/StyledPage';
 import SimpleRouter from './chapter16/SimpleRouter';
+import ApiRequest from './chapter17/ApiRequest';
+import ApiRequestAsyncAwait from './chapter17/ApiRequestAsyncAwait';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -160,13 +162,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   // );
 
     // 7.5 & 7.6 예제
-    root.render(
-      // <ParentComponent />
-      <TextInputWithFocusButton />
-      // <ComponentVariable />
-    //   // <UserStatusEx />
-    //   // <InputContainer />
-    );
+    // root.render(
+    //   // <ParentComponent />
+    //   <TextInputWithFocusButton />
+    //   // <ComponentVariable />
+    // //   // <UserStatusEx />
+    // //   // <InputContainer />
+    // );
 
     // root.render(
     //   <Accommodate />
@@ -240,6 +242,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     // root.render(
     //   // <SimpleRouter />
     // );
+
+    root.render(
+      // <ApiRequest />
+      <ApiRequestAsyncAwait />
+    );
 
 
 // If you want to start measuring performance in your app, pass a function
