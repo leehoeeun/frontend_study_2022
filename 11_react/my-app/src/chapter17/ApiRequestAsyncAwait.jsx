@@ -15,11 +15,6 @@ function ApiRequest(props) {
     } catch (error) {
       console.log(error);
     }
-
-
-
-
-
   };
 
   return (
