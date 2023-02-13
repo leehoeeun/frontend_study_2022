@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from "react-redux";
+import { store } from "./chapter18/app/store";   // store.js에 변수 store를 export했기 때문에 가져올 수 있음
+
 import JsxUse from './chapter3/3.4/JsxUse';    // 14번 줄에 <JsxUse /> 자동 완성 하니까 해당 줄 자동 생성됨
 import Library from './chapter3/Library';
 import Clock from './chapter4/Clock';
@@ -67,6 +70,7 @@ import SimpleRouter from './chapter16/SimpleRouter';
 import Modal from './components/common/Modal';
 import ApiRequest from './chapter17/ApiRequest';
 import ApiRequestAsyncAwait from './chapter17/ApiRequestAsyncAwait';
+import CounterApp from './chapter18/CounterApp';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -244,12 +248,20 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     //   // <SimpleRouter />
     // );
 
-    root.render(
-      // <SimpleRouter />
-      // <Modal />
-      // <ApiRequest />
-      <ApiRequestAsyncAwait />
-    );
+    // root.render(
+    //   // <SimpleRouter />
+    //   // <Modal />
+    //   // <ApiRequest />
+    //   <ApiRequestAsyncAwait />
+    // );
+
+  root.render(
+    // 2. 리액트에 Redux Store 제공하기
+    // CounterApp 컴포넌트와 그 하위 자식들은 Redux Store에 접근 가능
+    <Provider store={store}>
+      <CounterApp />
+    </Provider>
+  );
 
 
 // If you want to start measuring performance in your app, pass a function
