@@ -21,7 +21,7 @@ import HeavyCalculator from './chapter7/7.4/HeavyCalculator';
 import ParentComponent from './chapter7/7.5/ParentComponent';
 import TextInputWithFocusButton from './chapter7/7.6/TextInputWithFocusButton';
 import ComponentVariable from './chapter7/7.6/ComponentVariable';
-import UserStatusEx from './chapter7/7.8/ex1/UserStatusEx';
+// import UserStatusEx from './chapter7/7.8/ex1/UserStatusEx';
 import InputContainer from './chapter7/7.8/ex2/InputContainer';
 import ReClock from './chapter4/ReClock';
 import RePropUse from './chapter5/5.3review/RePropUse';
@@ -64,6 +64,7 @@ import DarkOrLight from './chapter14/DarkOrLight';
 import MainContent from './chapter14/MainContent';
 import StyledPage from './chapter15/StyledPage';
 import SimpleRouter from './chapter16/SimpleRouter';
+import Modal from './components/common/Modal';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -238,7 +239,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
     // 라우터 예제
     root.render(
-      <SimpleRouter />
+      // <SimpleRouter />
+      <Modal />
     );
 
 
