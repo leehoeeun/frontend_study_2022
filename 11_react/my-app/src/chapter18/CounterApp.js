@@ -1,7 +1,9 @@
 import React from 'react';
+import { store } from './app/store';
 import Counter from './features/counter/Counter';
 
 function CounterApp(props) {
+  // console.log(store);
   return (
     <Counter />
   );
