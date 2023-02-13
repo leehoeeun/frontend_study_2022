@@ -2,6 +2,17 @@ import { useState } from "react";
 import MainContent from "./MainContent";
 import ThemeContext from "./ThemeContext";
 
+const themes = {
+  light: {
+    foreground: "#000000",
+    background: "#eeeeee"
+  },
+  dark: {
+    foreground: "#ffffff",
+    background: "#222222"
+  }
+};
+
 function DarkOrLight() {
   const [theme, setTheme] = useState('light');
 
