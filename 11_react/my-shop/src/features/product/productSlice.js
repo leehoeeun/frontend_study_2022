@@ -39,10 +39,13 @@ const propductSlice = createSlice({
     getProductById: (state, action)=> {
       state.selectedProduct = action.payload
     },
+    getMoreProduct: (state, action)=> {
+      state.productList.push();   // push() 함수 인자값으로 뭘 보내는건지 공부후 적용
+    },
   },
 });
 
-export const { getAllProducts, getProductById } = propductSlice.actions;
+export const { getAllProducts, getProductById, getMoreProduct } = propductSlice.actions;
 
 export const selectProductList = state => state.product.productList;
 export const selectSelectedProduct = state => state.product.selectedProduct;
