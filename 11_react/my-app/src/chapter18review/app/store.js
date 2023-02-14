@@ -3,6 +3,6 @@ import shopReducer from "../features/counter/shopSlice";
 
 export const store = configureStore({
   reducer: {
-    counter: shopReducer,
+    shop: shopReducer,
   }
 });
