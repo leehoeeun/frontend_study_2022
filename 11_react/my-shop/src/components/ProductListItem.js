@@ -18,7 +18,7 @@ function ProductListItem(props) {
   const { imagePath, title, price } = product;
   
   return (
-    <div>
+    <>
       {/* <Col md={4} sm={6}>
         <img src={product.imagePath} width="80%" />
         <h4>{product.title}</h4>
@@ -29,7 +29,7 @@ function ProductListItem(props) {
         <h4>{title}</h4>
         <p>{price}원</p>
       </StyledCol>
-    </div>
+    </>
   );
 }
 
