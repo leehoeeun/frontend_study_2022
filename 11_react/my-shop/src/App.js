@@ -4,6 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';  // bootstrap CSS 추가
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import Header from "./pages/Header";
 import { BrowserRouter, Routes ,Route } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.min.css';
+import { ToastContainer } from "react-toastify";
+
 import Main from "./pages/Main";
 import ProductDetail from "./pages/ProductDetail";
 
@@ -48,7 +51,12 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-
+      <ToastContainer 
+        position="bottom-right"
+        autoClose={3000}
+        pauseOnFocusLoss={false}
+        theme="dark"
+      />
     </>
   );
 }

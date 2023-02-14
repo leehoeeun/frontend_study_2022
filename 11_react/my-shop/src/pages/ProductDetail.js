@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row, Button, Alert } from 'react-bootstrap';
+import { Col, Container, Row, Button, Alert, Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
@@ -8,6 +8,7 @@ import { getProductById, selectSelectedProduct } from '../features/product/produ
 
 // 서버에서 받아온 데이터라고 가정
 import data from "../data.json";
+import { toast } from 'react-toastify';
 
 // 스타일드 컴포넌트를 이용한 애니메이션 속성 적용
 const highlight = keyframes`
@@ -16,7 +17,7 @@ const highlight = keyframes`
   to { background-color: #cff4fc; }
 `;
 
-const StyledSlert = styled(Alert)`
+const StyledAlert = styled(Alert)`
   animation: ${highlight} 1s linear infinite;
 `;
 
@@ -55,6 +56,18 @@ function ProductDetail(props) {
     // ---------------------------------------------------
   }, []);
 
+  // 주문 수량 선택
+  const [orderCount, setOrderCount] = useState(1); 
+  const handleChangeOrderCount = (e) => {
+    console.log(e.target.value);
+
+    if(isNaN(e.target.value)) {  // 유효성 검사 - 숫자가 아닌 것을 적으면 입력이 안되도록!
+      toast.error('숫자만 입력하세요!');
+      return;
+    }
+    setOrderCount(Number(e.target.value));   // input 반환되는 값은 모두 string으로 인식하기 때문에 Number() 숫자 반환되게끔 함
+  }
+
   // product가 없을 경우! id 값이 없을 경우! 상세페이지로 못들어 가도록 막기
   if(!product) {
     // return null;
@@ -68,9 +81,9 @@ function ProductDetail(props) {
       처음 렌더링 됐을 때 setTimeout으로 타이머 설정 */}
       {/* pt-3 pb pl pr : padding top/ bottom/ left/ right */}
       {showInfo && 
-        <StyledSlert variant="info" onClose={() => setShowInfo(false)} dismissible>
+        <StyledAlert variant="info" onClose={() => setShowInfo(false)} dismissible>
           현재 34명이 이 상품을 보고 있습니다.
-        </StyledSlert>
+        </StyledAlert>
       }
 
       <Row>
@@ -82,6 +95,11 @@ function ProductDetail(props) {
           <h4 className='pt-5'>{product.title}</h4>
           <p>{product.content}</p>
           <p>{product.price}원</p>
+
+          <Col md={4} className="m-auto mb-3">
+            <Form.Control type="text" value={orderCount} onChange={handleChangeOrderCount} />
+          </Col>
+
           <Button variant="primary">주문하기</Button>
         </Col>
       </Row>
