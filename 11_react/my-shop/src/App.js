@@ -5,6 +5,7 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import Header from "./pages/Header";
 import { BrowserRouter, Routes ,Route } from "react-router-dom";
 import Main from "./pages/Main";
+import ProductDetail from "./pages/ProductDetail";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -42,6 +43,8 @@ function App() {
           <Route path='/' element={<Header />}>
             {/* index: index route(여기서는 default child route) */}
             <Route index element={<Main />} />
+            {/* /detail/1 로 접속하면 productId에 1이 담김 */}
+            <Route path="/detail/:productId" element={<ProductDetail />}/>
           </Route>
         </Routes>
       </BrowserRouter>

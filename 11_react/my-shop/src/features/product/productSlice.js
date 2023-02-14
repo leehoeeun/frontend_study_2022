@@ -21,7 +21,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   productList: [],
-  selectedProduct: null
+  selectedProduct: {},    // 상품 하나이기 때문에 {}를 씀. 여러개일 경우 []대괄호!
 };
 
 
@@ -43,5 +43,8 @@ const propductSlice = createSlice({
 });
 
 export const { getAllProducts, getProductById } = propductSlice.actions;
+
+export const selectProductList = state => state.product.productList;
+export const selectSelectedProduct = state => state.product.selectedProduct;
 
 export default propductSlice.reducer;
