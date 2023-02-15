@@ -14,7 +14,7 @@ const StyledCol = styled(Col)`
 // GlobalStyle 관련 css 내용은 App.js 파일 내에 있음! 거기서 클래스명만 가져옴
 
 function ProductListItem(props) {
-  console.log(props);
+  // console.log(props);
   const { product } = props;
   const { imagePath, title, price, id } = product;
 

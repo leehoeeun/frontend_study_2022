@@ -10,8 +10,15 @@ import yImg from "../images/yonex.jpg";
 
 // 서버에서 받아온 데이터라고 가정
 import data from "../data.json";
-import { getAllProducts, getMoreProduct } from "../features/product/productSlice";
+import { 
+  getAllProducts, 
+  getMoreProduct, 
+  getMoreProductAsync, 
+  selectProductList, 
+  selectStatus
+} from "../features/product/productSlice";
 import ProductListItem from '../components/ProductListItem';
+import { getProducts } from '../api/productAPI';
 
 const MainBackground = styled.div`
   height: 500px;
@@ -23,8 +30,14 @@ const MainBackground = styled.div`
 
 function Main(props) {
   const dispatch = useDispatch();
-  const productList = useSelector((state) => state.product.productList);  // state 정보를 다 불러와서 그 중 state.product.productList를 골라서 쓰겠다 
-  console.log(productList);
+  // const productList = useSelector((state) => state.product.productList);  // state 정보를 다 불러와서 그 중 state.product.productList를 골라서 쓰겠다 
+  // console.log(productList);
+
+  const productList = useSelector(selectProductList);
+
+  // API 요청 상태 가져오기(로딩 상태)
+  // 로딩 만들기 추천 : react-spinners, Lottie Files
+  const status = useSelector(selectStatus);
 
   // 처음 마운트 됐을 때 서버에 상품목록 데이터를 요청하고
   // 그 결과를 리덕스 스토어에 저장
@@ -33,6 +46,20 @@ function Main(props) {
     // ... api call ...
     dispatch(getAllProducts(data)); // 화물에 담겨서 간다
   }, []);
+
+  const handleGetMoreProducts = async () => {
+    const result = await getProducts();
+    if (!result) return;  // 결과 값이 안오면 종료 처리 
+
+    // 스토어에 dispatch로 요청보내기
+    dispatch(getMoreProduct(result));
+
+    if(status === 'loading') {
+      return <h1>로딩중입니다.</h1>;
+    }
+  };
+
+
 
   return (
     <>
@@ -70,12 +97,13 @@ function Main(props) {
           </Row>
         </Container>
 
-        {/* 상품더보기 */}
+        {/* 상품더보기 - 실제로 이렇게 사용하는 경우 X*/}
         <Button variant="secondary" className="mb-4"
           onClick={() => {
             axios.get('http://localhost:4000/products')
               .then((response) => {
                 console.log(response.data);
+                // 스토어에 dispatch로 요청보내기
                 dispatch(getMoreProduct(response.data))
               })
               .catch((error) => {
@@ -83,6 +111,18 @@ function Main(props) {
               });
           }}
         >더보기</Button>
+
+        {/* 위 HTTP 요청 코드를 함수로 만들어서 api폴더로 추출하고 async/await로 바꾸기 */}
+        <Button variant="secondary" className="mb-4" onClick={handleGetMoreProducts}>
+          더보기
+        </Button>
+        
+        {/* thunk라는 라이브러리를 통해 비동기 작억 처리하기 */}
+        <Button variant="secondary" className="mb-4" 
+          onClick={() => dispatch(getMoreProductAsync())}
+        >
+          더보기 {status}
+        </Button>
       </section>
     </>
   );
