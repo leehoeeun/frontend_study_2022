@@ -51,25 +51,31 @@ const cartSlice = createSlice({
     // 장바구니에 아이템을 추가하는 리듀서
     // 이미 장바구니에 들어가 있는 상품이면 카운트만 증가시켜야 하고,
     // 장바구니에 없는 상품이면 새롭게 추가
-    addItemToCart: (state, { payload: item }) => {
+    addItemToCart: (state, { payload:item }) => {
       // item = { id, title, price, count }; 를 받아옴
       // find()를 사용하여 해당 상품이 있는지 찾고~
-      console.log(item.count);
-      const addItem = state.cartList.find((cart) => { return cart.id === item.id; });
-      if(addItem) {
+      console.log(item);
+      const targetItem = state.cartList.find((cart) => { return cart.id === item.id; });
+      if(targetItem) {
         // console.log(addItem.count);
-        addItem.count += item.count;
+        targetItem.count += item.count;
       }else {
-        // console.log(addItem);
+        // console.log(targetItem);
         // console.log(item);
         state.cartList.push(item);
       }
-
-    }
+    },
+    // Quiz: 장바구니에서 삭제
+    removeItemFromCart: (state, { payload : id }) => {
+      console.log(id);
+      const targetIndex = state.cartList.findIndex((cart) => { return cart.id === id });
+      console.log(targetIndex);
+      state.cartList.splice(targetIndex, 1);
+    }, 
   },
 });
 
-export const { increaseCount, decreaseCount, addItemToCart } = cartSlice.actions;
+export const { increaseCount, decreaseCount, addItemToCart, removeItemFromCart } = cartSlice.actions;
 
 export const selectCartList = state => state.cart.cartList;
 

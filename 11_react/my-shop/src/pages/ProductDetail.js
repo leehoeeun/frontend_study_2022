@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row, Button, Alert, Form, Nav, TabContent } from 'react-bootstrap';
+import { Col, Container, Row, Button, Alert, Form, Nav, TabContent, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 // import getProductById from "../features/product/productSlice";
 import { getProductById, selectSelectedProduct } from '../features/product/productSlice';
@@ -42,6 +42,12 @@ function ProductDetail(props) {
   const product = useSelector(selectSelectedProduct);
   console.log(product);
 
+  // 장바구니 modal창 state관리
+  const [showModal, setShowModal] = useState(false);  // 모달 상태
+  const handleClose = () => setShowModal(false);
+  const handleOpen = () => setShowModal(true);
+  const navigator = useNavigate();
+
   // 처음 마운트 됐을 때 서버에 상품 id를 이용하여 데이터를 요청하고 그 결과를 리덕스 스토어에 저장
   useEffect(() => {
     // 서버에서 특정 상품의 데이터를 가져오는 작업을 했다고 가정
@@ -51,6 +57,18 @@ function ProductDetail(props) {
       return product.id === productId;
     });
     dispatch(getProductById(foundProduct));
+
+    // 상세페이지에 들어오면 해당 상품의 id를 localStorage에 추가 (추가할 때는 getItem이고 데이터가 문자이기 때문에 JSON.parse로 JSON값으로 변경해줌)
+    let latestViewed = JSON.parse(localStorage.getItem('latestViewed')) || [] ;  // 키 값이 없으면 []빈배열을 넣어준다
+    // 문제발생(id가 중복된 것도 DB에 들어가짐)
+    // id를 넣기 전에 기존 배열에 존재하는지 검사하거나
+    // 또는 일단 넣고 Set 자료형을 이용하여 중복 제거
+    latestViewed.push(productId);
+    latestViewed = new Set(latestViewed);  // Set객체로 반환한걸 배열로 바꿔줘야 함  (14_Set_map 에 자료 있음)
+    console.log(latestViewed);
+    // Array.from(latestViewed)  // Array.from() 배열로 바꿔주고 싶은 걸 괄호에 넣기 또는 ...스프레드 연산자로 배열로 변경
+    latestViewed = [...latestViewed];
+    localStorage.setItem('latestViewed', JSON.stringify(latestViewed));  // (넣어줄 때는 setItem이고 JSON을 문자열로 변경해줌 )
 
     // Alert가 3초뒤에 없어지도록-----------------
     const timeout = setTimeout(() => {
@@ -110,12 +128,14 @@ function ProductDetail(props) {
           <Button variant="primary">주문하기</Button>
           <Button variant="warning"
             onClick={() => {
-              dispatch(addItemToCart({ 
-                id: product.id, 
-                title: product.title,
-                price:product.price, 
-                count: orderCount
-              }));
+              // dispatch(addItemToCart({ 
+              //   id: product.id, 
+              //   title: product.title,
+              //   price:product.price, 
+              //   count: orderCount
+              // }));
+
+              handleOpen(); // 장바구니 모달열기
             }}
           >장바구니</Button>
         </Col>
@@ -179,7 +199,31 @@ function ProductDetail(props) {
           'exchange': <div>탭 내용4-4</div>,
         }[showTab]
       }
-
+      <Modal show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>쁘띠 샵 알림</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          장바구니에 상품을 {orderCount}개 담았습니다.<br />
+          장바구니로 이동하시겠습니까?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={() => { 
+            navigator('/cart')
+            dispatch(addItemToCart({ 
+              id: product.id, 
+              title: product.title,
+              price:product.price, 
+              count: orderCount
+            }));
+        }}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 }
