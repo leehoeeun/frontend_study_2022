@@ -101,7 +101,8 @@ function Main(props) {
         {/* 상품더보기 - 실제로 이렇게 사용하는 경우 X*/}
         <Button variant="secondary" className="mb-4"
           onClick={() => {
-            axios.get('http://localhost:4000/products')
+            // axios.get('http://localhost:4000/products')
+            axios.get('https://my-json-server.typicode.com/leehoeeun/storage/products')
               .then((response) => {
                 console.log(response.data);
                 // 스토어에 dispatch로 요청보내기

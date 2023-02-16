@@ -47,6 +47,9 @@ function ProductDetail(props) {
   const handleClose = () => setShowModal(false);
   const handleOpen = () => setShowModal(true);
   const navigator = useNavigate();
+  
+  // 숫자 포맷 적용
+  const formatter = new Intl.NumberFormat('ko-KR');
 
   // 처음 마운트 됐을 때 서버에 상품 id를 이용하여 데이터를 요청하고 그 결과를 리덕스 스토어에 저장
   useEffect(() => {
@@ -120,7 +123,7 @@ function ProductDetail(props) {
         <Col md={6}>
           <h4 className='pt-5'>{product.title}</h4>
           <p>{product.content}</p>
-          <p>{product.price}원</p>
+          <p>{formatter.format(product.price)}원</p>
 
           <Col md={4} className="m-auto mb-3">
             <Form.Control type="text" value={orderCount} onChange={handleChangeOrderCount} />

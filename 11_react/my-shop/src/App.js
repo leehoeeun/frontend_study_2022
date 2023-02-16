@@ -26,6 +26,11 @@ const GlobalStyle = createGlobalStyle`
   .cursor-pointer {
     cursor: pointer;
   }
+  .text-ellipsis{
+    white-space: nowrap;  // 감싸지 않겠다 -> 그래서 한줄로 나옴
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 

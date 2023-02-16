@@ -18,6 +18,9 @@ function ProductListItem(props) {
   const { product } = props;
   const { imagePath, title, price, id } = product;
 
+  // 숫자 포맷 적용
+  const formatter = new Intl.NumberFormat('ko-KR');
+
   const navigate = useNavigate();
   
   return (
@@ -34,7 +37,7 @@ function ProductListItem(props) {
           }}
         />
         <h4>{title}</h4>
-        <p>{price}원</p>
+        <p>{formatter.format(price)}원</p>
       </StyledCol>
     </>
   );
