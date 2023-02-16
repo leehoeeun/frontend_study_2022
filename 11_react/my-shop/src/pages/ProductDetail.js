@@ -58,6 +58,7 @@ function ProductDetail(props) {
     });
     dispatch(getProductById(foundProduct));
 
+    // F12 > Application에서 볼 수 있음
     // 상세페이지에 들어오면 해당 상품의 id를 localStorage에 추가 (추가할 때는 getItem이고 데이터가 문자이기 때문에 JSON.parse로 JSON값으로 변경해줌)
     let latestViewed = JSON.parse(localStorage.getItem('latestViewed')) || [] ;  // 키 값이 없으면 []빈배열을 넣어준다
     // 문제발생(id가 중복된 것도 DB에 들어가짐)
