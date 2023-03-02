@@ -7,7 +7,8 @@ import Modal from './common/Modal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Modal />
+  // <Modal />
+<App />
 );
 
 // If you want to start measuring performance in your app, pass a function
