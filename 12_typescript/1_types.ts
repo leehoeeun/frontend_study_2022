@@ -225,7 +225,8 @@ let userInfo: (string | (undefined | number) |boolean)[] = [userName, userAge, m
 // 에러가 안나게 frontClass라는 변수에 타입 지정
 
 let frontClass: {
-    subject: string[] | boolean[],
+    // subject: string[] | boolean[],
+    subject: (string | boolean)[],
     score: number[],
     teacher: string,
     student: string | string[]
